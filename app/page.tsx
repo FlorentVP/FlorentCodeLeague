@@ -18,6 +18,254 @@ function getTimeLeft() {
   }
 }
 
+const PERSONAL_DOMAINS = ['gmail.com','yahoo.com','hotmail.com','outlook.com','icloud.com','me.com','live.com','msn.com','protonmail.com','aol.com']
+
+function isSchoolEmail(email: string): boolean {
+  const domain = email.split('@')[1]?.toLowerCase()
+  if (!domain) return false
+  return !PERSONAL_DOMAINS.includes(domain)
+}
+
+type Applicant = {
+  fullName: string
+  email: string
+  linkedin: string
+  discord: string
+  hometown: string
+}
+
+const emptyApplicant = (): Applicant => ({
+  fullName: '', email: '', linkedin: '', discord: '', hometown: '',
+})
+
+type Errors = Record<string, string>
+
+function validateApplicant(a: Applicant, prefix: string): Errors {
+  const e: Errors = {}
+  if (!a.fullName.trim()) e[`${prefix}.fullName`] = 'Required'
+  if (!a.email.trim()) e[`${prefix}.email`] = 'Required'
+  else if (!a.email.includes('@')) e[`${prefix}.email`] = 'Invalid email'
+  else if (!isSchoolEmail(a.email)) e[`${prefix}.email`] = 'School email required'
+  if (!a.linkedin.trim()) e[`${prefix}.linkedin`] = 'Required'
+  if (!a.hometown.trim()) e[`${prefix}.hometown`] = 'Required'
+  return e
+}
+
+function ApplicantFields({
+  prefix,
+  data,
+  onChange,
+  errors,
+}: {
+  prefix: string
+  data: Applicant
+  onChange: (field: keyof Applicant, value: string) => void
+  errors: Errors
+}) {
+  return (
+    <div className="apply-fields">
+      <div className="apply-field">
+        <span className="field-lbl">Full Name *</span>
+        <input
+          className="field-input"
+          placeholder="Ada Lovelace"
+          value={data.fullName}
+          onChange={e => onChange('fullName', e.target.value)}
+        />
+        {errors[`${prefix}.fullName`] && <span className="field-error">{errors[`${prefix}.fullName`]}</span>}
+      </div>
+      <div className="apply-field">
+        <span className="field-lbl">School Email *</span>
+        <input
+          className="field-input"
+          type="email"
+          placeholder="ada@kth.se"
+          value={data.email}
+          onChange={e => onChange('email', e.target.value)}
+        />
+        {errors[`${prefix}.email`] && <span className="field-error">{errors[`${prefix}.email`]}</span>}
+      </div>
+      <div className="apply-field">
+        <span className="field-lbl">LinkedIn *</span>
+        <input
+          className="field-input"
+          placeholder="linkedin.com/in/ada"
+          value={data.linkedin}
+          onChange={e => onChange('linkedin', e.target.value)}
+        />
+        {errors[`${prefix}.linkedin`] && <span className="field-error">{errors[`${prefix}.linkedin`]}</span>}
+      </div>
+      <div className="apply-field">
+        <span className="field-lbl">Hometown *</span>
+        <input
+          className="field-input"
+          placeholder="Stockholm"
+          value={data.hometown}
+          onChange={e => onChange('hometown', e.target.value)}
+        />
+        {errors[`${prefix}.hometown`] && <span className="field-error">{errors[`${prefix}.hometown`]}</span>}
+      </div>
+      <div className="apply-field full">
+        <span className="field-lbl">Discord (optional)</span>
+        <input
+          className="field-input"
+          placeholder="ada#1234"
+          value={data.discord}
+          onChange={e => onChange('discord', e.target.value)}
+        />
+      </div>
+    </div>
+  )
+}
+
+function ApplyForm() {
+  const [type, setType] = useState<'individual' | 'team'>('individual')
+  const [primary, setPrimary] = useState<Applicant>(emptyApplicant())
+  const [teamName, setTeamName] = useState('')
+  const [teammates, setTeammates] = useState<Applicant[]>([])
+  const [errors, setErrors] = useState<Errors>({})
+  const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+
+  function updatePrimary(field: keyof Applicant, value: string) {
+    setPrimary(p => ({ ...p, [field]: value }))
+    setErrors(e => { const n = { ...e }; delete n[`primary.${field}`]; return n })
+  }
+
+  function updateTeammate(i: number, field: keyof Applicant, value: string) {
+    setTeammates(ts => ts.map((t, idx) => idx === i ? { ...t, [field]: value } : t))
+    setErrors(e => { const n = { ...e }; delete n[`teammate${i}.${field}`]; return n })
+  }
+
+  function addTeammate() {
+    if (teammates.length < 5) setTeammates(ts => [...ts, emptyApplicant()])
+  }
+
+  function removeTeammate(i: number) {
+    setTeammates(ts => ts.filter((_, idx) => idx !== i))
+  }
+
+  function handleSubmit() {
+    const e: Errors = { ...validateApplicant(primary, 'primary') }
+    if (type === 'team') {
+      if (!teamName.trim()) e['teamName'] = 'Required'
+      teammates.forEach((t, i) => {
+        Object.assign(e, validateApplicant(t, `teammate${i}`))
+      })
+    }
+    if (Object.keys(e).length > 0) { setErrors(e); return }
+    setSubmitting(true)
+    setTimeout(() => { setSubmitting(false); setSubmitted(true) }, 800)
+  }
+
+  if (submitted) {
+    return (
+      <div className="form-success">
+        <div className="success-lbl">Application received</div>
+        <div className="success-title">You&apos;re in the queue.</div>
+        <div className="success-sub">
+          We review applications manually. If you&apos;re selected, you&apos;ll hear from us before July 2026.
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="apply-form">
+      <div className="apply-toggle">
+        <button
+          className={`toggle-btn${type === 'individual' ? ' active' : ''}`}
+          onClick={() => { setType('individual'); setTeammates([]) }}
+        >
+          Individual
+        </button>
+        <button
+          className={`toggle-btn${type === 'team' ? ' active' : ''}`}
+          onClick={() => setType('team')}
+        >
+          Team
+        </button>
+      </div>
+
+      <span className="apply-section-lbl">Your details</span>
+      <ApplicantFields prefix="primary" data={primary} onChange={updatePrimary} errors={errors} />
+
+      {type === 'team' && (
+        <>
+          <div className="apply-divider" />
+          <span className="apply-section-lbl">Team</span>
+          <div className="apply-fields" style={{marginBottom: '24px'}}>
+            <div className="apply-field full">
+              <span className="field-lbl">Team Name *</span>
+              <input
+                className="field-input"
+                placeholder="Team Axionite"
+                value={teamName}
+                onChange={e => { setTeamName(e.target.value); setErrors(er => { const n = {...er}; delete n['teamName']; return n }) }}
+              />
+              {errors['teamName'] && <span className="field-error">{errors['teamName']}</span>}
+            </div>
+          </div>
+
+          {teammates.map((tm, i) => (
+            <div key={i} className="teammate-block">
+              <div className="teammate-header">
+                <span className="teammate-num">Teammate {i + 1}</span>
+                <button className="remove-btn" onClick={() => removeTeammate(i)}>Remove</button>
+              </div>
+              <div className="teammate-fields">
+                <div className="apply-field">
+                  <span className="field-lbl">Full Name *</span>
+                  <input className="field-input" placeholder="Full Name" value={tm.fullName} onChange={e => updateTeammate(i, 'fullName', e.target.value)} />
+                  {errors[`teammate${i}.fullName`] && <span className="field-error">{errors[`teammate${i}.fullName`]}</span>}
+                </div>
+                <div className="apply-field">
+                  <span className="field-lbl">School Email *</span>
+                  <input className="field-input" type="email" placeholder="name@uni.edu" value={tm.email} onChange={e => updateTeammate(i, 'email', e.target.value)} />
+                  {errors[`teammate${i}.email`] && <span className="field-error">{errors[`teammate${i}.email`]}</span>}
+                </div>
+                <div className="apply-field">
+                  <span className="field-lbl">LinkedIn *</span>
+                  <input className="field-input" placeholder="linkedin.com/in/..." value={tm.linkedin} onChange={e => updateTeammate(i, 'linkedin', e.target.value)} />
+                  {errors[`teammate${i}.linkedin`] && <span className="field-error">{errors[`teammate${i}.linkedin`]}</span>}
+                </div>
+                <div className="apply-field">
+                  <span className="field-lbl">Hometown *</span>
+                  <input className="field-input" placeholder="City" value={tm.hometown} onChange={e => updateTeammate(i, 'hometown', e.target.value)} />
+                  {errors[`teammate${i}.hometown`] && <span className="field-error">{errors[`teammate${i}.hometown`]}</span>}
+                </div>
+                <div className="apply-field full">
+                  <span className="field-lbl">Discord (optional)</span>
+                  <input className="field-input" placeholder="handle#1234" value={tm.discord} onChange={e => updateTeammate(i, 'discord', e.target.value)} />
+                </div>
+              </div>
+            </div>
+          ))}
+
+          <button
+            className="add-teammate-btn"
+            onClick={addTeammate}
+            disabled={teammates.length >= 5}
+          >
+            + Add teammate {teammates.length > 0 ? `(${teammates.length}/5)` : ''}
+          </button>
+        </>
+      )}
+
+      <div className="apply-submit">
+        <button className="btn-white" onClick={handleSubmit} disabled={submitting}>
+          {submitting ? 'Submitting...' : 'Apply for Selection'}
+        </button>
+        {Object.keys(errors).length > 0 && (
+          <span style={{fontSize: '0.72em', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,80,80,0.9)'}}>
+            Fix errors above
+          </span>
+        )}
+      </div>
+    </div>
+  )
+}
+
 export default function Home() {
   const [time, setTime] = useState(getTimeLeft)
 
@@ -164,22 +412,17 @@ export default function Home() {
         </div>
       </div>
 
-      {/* LIMITED ACCESS */}
+      {/* 08 APPLY */}
       <div className="section" id="apply">
-        <div className="limited">
-          <div>
-            <div style={{fontSize: '0.68em', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#888', marginBottom: '20px'}}>Limited Access</div>
-            <p className="lim-txt"><strong>We accept a limited number of teams.</strong><br /><br />If you&apos;re strong -- you&apos;ll get in.<br />If you&apos;re not -- you won&apos;t.<br /><br />Applications reviewed by Florent.</p>
-          </div>
-          <a href="#" className="btn-white" style={{whiteSpace: 'nowrap'}}>Apply for Selection</a>
-        </div>
+        <div className="sec-hd"><span className="sec-num">08</span><h2 className="sec-title">Apply for Selection</h2></div>
+        <ApplyForm />
       </div>
 
       {/* FINAL CTA */}
       <div className="final-cta">
         <h2 className="fcta-title">Where do<br />you <em>stand?</em></h2>
         <div className="fcta-sub">3 weeks -- one leaderboard -- Stockholm finals</div>
-        <a href="#" className="btn-white">Apply for Selection</a>
+        <a href="#apply" className="btn-white">Apply for Selection</a>
       </div>
 
       {/* FOOTER */}

@@ -570,4 +570,184 @@ body {
     .limited { grid-template-columns: 1fr; }
     .prize-box { flex-direction: column; gap: 12px; }
     .meta-row { gap: 24px; }
+    .apply-toggle { flex-direction: column; }
+    .apply-fields { grid-template-columns: 1fr; }
+    .teammate-fields { grid-template-columns: 1fr; }
+}
+
+/* ── APPLY FORM ── */
+.apply-form {
+    max-width: 720px;
+}
+.apply-toggle {
+    display: flex;
+    gap: 0;
+    margin-bottom: 48px;
+    border: 1px solid rgba(255,255,255,0.2);
+    width: fit-content;
+}
+.toggle-btn {
+    background: transparent;
+    color: rgba(255,255,255,0.4);
+    border: none;
+    padding: 12px 40px;
+    font-size: 0.78em;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s, color 0.15s;
+}
+.toggle-btn.active {
+    background: #fff;
+    color: #000;
+}
+.toggle-btn:not(.active):hover {
+    color: rgba(255,255,255,0.7);
+}
+.apply-section-lbl {
+    font-size: 0.62em;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 24px;
+    display: block;
+}
+.apply-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.12);
+    margin-bottom: 1px;
+}
+.apply-field {
+    background: #000;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.apply-field.full {
+    grid-column: 1 / -1;
+}
+.field-lbl {
+    font-size: 0.58em;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #888;
+}
+.field-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 0.92em;
+    font-family: inherit;
+    font-weight: 300;
+    width: 100%;
+    padding: 0;
+}
+.field-input::placeholder { color: rgba(255,255,255,0.2); }
+.field-input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 100px #000 inset;
+    -webkit-text-fill-color: #fff;
+}
+.apply-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.12);
+    margin: 40px 0;
+}
+.teammate-block {
+    border: 1px solid rgba(255,255,255,0.12);
+    margin-bottom: 1px;
+}
+.teammate-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.02);
+}
+.teammate-num {
+    font-size: 0.62em;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #888;
+}
+.remove-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.3);
+    font-size: 0.72em;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0;
+}
+.remove-btn:hover { color: rgba(255,255,255,0.7); }
+.teammate-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(255,255,255,0.12);
+}
+.add-teammate-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-top: none;
+    color: rgba(255,255,255,0.5);
+    padding: 18px 24px;
+    font-size: 0.78em;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: inherit;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 40px;
+}
+.add-teammate-btn:hover { color: rgba(255,255,255,0.88); border-color: rgba(255,255,255,0.3); }
+.add-teammate-btn:disabled { opacity: 0.3; cursor: default; }
+.field-error {
+    font-size: 0.6em;
+    letter-spacing: 0.1em;
+    color: rgba(255,80,80,0.9);
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+.apply-submit {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+.form-success {
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 48px 40px;
+}
+.success-lbl {
+    font-size: 0.62em;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 16px;
+}
+.success-title {
+    font-size: 1.75em;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+}
+.success-sub {
+    font-size: 0.88em;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
 }
