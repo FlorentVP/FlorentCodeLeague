@@ -154,26 +154,26 @@ export default function LoadingScreen() {
           position: 'absolute', bottom: 48,
           left: '50%', transform: 'translateX(-50%)',
           zIndex: 10, display: 'flex', flexDirection: 'column',
-          alignItems: 'center', gap: 12,
+          alignItems: 'center', gap: 16,
           opacity: progressShow ? 1 : 0,
           transition: 'opacity 1s ease 1s',
         }}>
           <div style={{
-            width: 120, height: 1,
-            background: 'rgba(255,255,255,0.12)',
+            fontFamily: 'Courier New, monospace',
+            fontSize: 13, letterSpacing: '0.25em',
+            textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)',
+          }}>Entering the arena</div>
+          <div style={{
+            width: 220, height: 2,
+            background: 'rgba(255,255,255,0.15)',
             position: 'relative', overflow: 'hidden',
           }}>
             <div style={{
               position: 'absolute', left: progressRun ? 0 : '-100%', top: 0, bottom: 0, width: '100%',
-              background: 'rgba(255,255,255,0.5)',
+              background: 'rgba(255,255,255,0.8)',
               transition: 'left 2.8s ease 0.2s',
             }} />
           </div>
-          <div style={{
-            fontFamily: 'Courier New, monospace',
-            fontSize: 9, letterSpacing: '0.18em',
-            textTransform: 'uppercase', color: 'rgba(255,255,255,0.22)',
-          }}>Entering the arena</div>
         </div>
       </div>
     </>
