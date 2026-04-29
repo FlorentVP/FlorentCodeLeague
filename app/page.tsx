@@ -447,13 +447,6 @@ export default function Home() {
         <ApplyForm />
       </div>
 
-      {/* FINAL CTA */}
-      <div className="final-cta">
-        <h2 className="fcta-title">Where do<br />you <em>stand?</em></h2>
-        <div className="fcta-sub">3 weeks -- one leaderboard -- Stockholm finals</div>
-        <a href="#apply" className="btn-white">Apply for Selection</a>
-      </div>
-
       {/* FOOTER */}
       <div className="ftr">
         <span>Florent Venture Partners -- florent.vc</span>
