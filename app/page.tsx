@@ -145,7 +145,7 @@ function ApplyForm() {
     setTeammates(ts => ts.filter((_, idx) => idx !== i))
   }
 
-  function handleSubmit() {
+  async function handleSubmit() {
     const e: Errors = { ...validateApplicant(primary, 'primary') }
     if (type === 'team') {
       if (!teamName.trim()) e['teamName'] = 'Required'
@@ -155,7 +155,19 @@ function ApplyForm() {
     }
     if (Object.keys(e).length > 0) { setErrors(e); return }
     setSubmitting(true)
-    setTimeout(() => { setSubmitting(false); setSubmitted(true) }, 800)
+    try {
+      const res = await fetch('/api/apply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type, primary, teamName, teammates }),
+      })
+      if (!res.ok) throw new Error('Failed')
+      setSubmitted(true)
+    } catch {
+      setErrors({ submit: 'Something went wrong. Please try again.' })
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   if (submitted) {
@@ -166,6 +178,18 @@ function ApplyForm() {
         <div className="success-sub">
           We review applications manually. If you&apos;re selected, you&apos;ll hear from us before July 2026.
         </div>
+        <div className="apply-divider" />
+        <p style={{fontSize: '0.92em', color: 'rgba(255,255,255,0.6)', marginBottom: '28px', fontWeight: 300, lineHeight: 1.6}}>
+          Follow Florent on LinkedIn so we can connect and keep track of your profile.
+        </p>
+        <a
+          href="https://www.linkedin.com/company/florent-vc"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-white"
+        >
+          Follow on LinkedIn
+        </a>
       </div>
     )
   }
@@ -256,7 +280,12 @@ function ApplyForm() {
         <button className="btn-white" onClick={handleSubmit} disabled={submitting}>
           {submitting ? 'Submitting...' : 'Apply for Selection'}
         </button>
-        {Object.keys(errors).length > 0 && (
+        {errors['submit'] && (
+          <span style={{fontSize: '0.72em', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,80,80,0.9)'}}>
+            {errors['submit']}
+          </span>
+        )}
+        {Object.keys(errors).filter(k => k !== 'submit').length > 0 && (
           <span style={{fontSize: '0.72em', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,80,80,0.9)'}}>
             Fix errors above
           </span>
