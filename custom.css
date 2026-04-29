@@ -1,0 +1,104 @@
+/* Increase sidebar logo size */
+[class*="sidebar"] img[alt*="logo" i],
+.mint-logo img,
+nav img[src*="logo"] {
+  max-height: 3rem !important;
+  width: auto !important;
+}
+
+/* Dense table component */
+.dense-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.dense-table th,
+.dense-table td {
+  padding: 5px 10px !important;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  line-height: 1.4;
+}
+
+.dense-table th {
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Force images inline and kill any wrapper margins */
+.dense-table td img {
+  width: 22px !important;
+  height: 22px !important;
+  max-width: 22px !important;
+  max-height: 22px !important;
+  object-fit: contain;
+  display: inline !important;
+  vertical-align: middle;
+  margin: 0 6px 0 0 !important;
+  padding: 0 !important;
+}
+
+/* Mintlify wraps images in <p> tags — flatten them */
+.dense-table td p {
+  display: inline !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Always show horizontal scrollbar when table overflows */
+.dense-table {
+  overflow-x: auto;
+}
+
+/* Cap range/content images to a reasonable size */
+[data-path*="ranges/"] {
+  max-width: 400px !important;
+}
+
+img[alt*="range"] {
+  max-width: 400px !important;
+}
+
+/* Fallback: cap all content images except small icons */
+#content img {
+  max-width: 400px !important;
+}
+
+#content .dense-table img {
+  max-width: 22px !important;
+}
+
+#content img[style*="float"] {
+  max-width: none !important;
+}
+
+/* Hide Mintlify assistant UI */
+html {
+  --assistant-sheet-width: 0px !important;
+}
+
+#assistant-entry,
+#assistant-entry-mobile,
+#chat-assistant-sheet,
+#chat-assistant-textarea,
+#ask-ai-code-block-button,
+#ask-ai-code-block-button + div,
+.chat-assistant-sheet,
+.chat-assistant-floating-input,
+.chat-assistant-input,
+[class*="chat-assistant"],
+button[aria-label="Toggle assistant panel"],
+button[aria-label="Ask AI"],
+button[aria-label="Ask AI assistant"],
+button[aria-label="Add to assistant"],
+[role="button"][aria-label*="assistant" i],
+[role="button"][aria-label*="ask ai" i],
+[role="button"][title*="assistant" i],
+[data-testid*="assistant" i],
+[data-testid*="ask-ai" i],
+[id*="assistant" i],
+[data-chat-payload-element-id] {
+  display: none !important;
+}

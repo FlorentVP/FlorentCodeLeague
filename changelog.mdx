@@ -1,0 +1,239 @@
+---
+title: Changelog
+description: What's new in Cambridge Battlecode.
+---
+
+<Update label="2026-04-08" description="Breach radius nerf" tags={["Balance"]}>
+  ## Breach radius nerf
+
+### Balance changes
+
+- **Breach vision** — Vision radius² decreased to 2 (down from 13).
+- **Breach attack** — Attack radius² decreased to 13 (down from 24).
+
+</Update>
+
+<Update label="2026-04-07" description="Resign messages, granular win conditions, CLI restructure" tags={["Feature", "Update"]}>
+  ## Resign messages, granular win conditions, and CLI restructure
+
+  ### New features
+
+  - **Resign with message** — [`resign()`](/api/controller#healing--destruction) now accepts an optional `message` parameter (max 500 characters). The message is saved to the replay and displayed in match results on both the platform and CLI.
+  - **Granular win conditions** — Each tiebreaker now reports its specific condition (axionite collected, titanium collected, harvesters, axionite stored, titanium stored, coinflip) instead of the generic "Resources". The match detail page and CLI show exactly which condition decided each game.
+  - **Map selection for unrated matches** — You can now specify up to 5 maps when requesting an unrated match: `cambc match unrated <id> --map arena --map galaxy`. If omitted, 5 random maps are used.
+  - **Challenge page** — Rematch buttons now open a dedicated challenge page where you can configure maps before starting the match.
+  - **Guest access** — The ladder, matches, match detail, team profiles, tournaments, and visualiser are now viewable without logging in.
+  - **Zip download** — Submission and test bot code viewers now have a download button to save the original zip.
+  - **Shared test runs** — All team members can now see each other's test runs, not just their own.
+
+  ### Updates
+
+  - **CLI restructure** — Match-related commands are now grouped under `cambc match`: `cambc match info`, `cambc match list`, `cambc match unrated`, `cambc match test`, `cambc match replay`, `cambc match watch`, `cambc match tests`. Team commands are under `cambc team`. The old top-level commands (`cambc unrated`, `cambc test-run`, `cambc matches`, `cambc test-matches`, `cambc teams`) still work but show a deprecation warning.
+  - **`cambc run` options** — New `--tle N` option sets a turn time limit in milliseconds (0 to disable). New `--map-random` picks a random map from your maps directory.
+  - **Write rate limiting** — All write API endpoints now enforce a per-user rate limit (30 requests per minute) to prevent abuse.
+  - **Active submission selection** — You can now manually select which submission is active from the Submissions page, rather than always using the latest.
+  - **CLI v1.6.0** — Includes all changes above. Update with `pip install --upgrade cambc`.
+</Update>
+
+<Update label="2026-03-31" description="Gunner rotation update" tags={["Balance", "Fix"]}>
+  ## Gunner rotation update
+
+Gunners can now reorient to any facing in a single rotation action.
+
+`rotate(direction)` now lets gunners rotate to any direction for 10 Ti while
+still taking a 1-turn cooldown.
+
+`can_rotate(direction)` now accepts any facing direction instead of only
+adjacent 45-degree turns.
+
+</Update>
+
+<Update label="2026-03-30" description="Core conversion and balance update" tags={["Feature", "Balance", "Fix"]}>
+  ## Core conversion and balance update
+
+This patch reworks early-game economy, makes several structures cheaper, adds
+new controller actions and turret-geometry queries, and fixes a couple of
+edge-case combat and building interactions.
+
+### New features
+
+- **`convert(amount)`** — Cores can now convert refined axionite into titanium at a rate of 1 Ax to 4 Ti.
+- **Converted-resource stats** — Axionite converted by the core is removed from the Ax collected stat and added to the Ti collected stat.
+- **`rotate(direction)`** — Gunners can now rotate 45 degrees by spending 10 Ti from the global store and taking a 1-turn cooldown.
+- **`can_rotate(direction)`** — Gunners can now preflight a 45-degree left or right rotation without mutating state.
+- **`get_attackable_tiles()`** — Turrets can now query their raw geometric attack pattern directly from the controller API.
+- **`get_attackable_tiles_from(position, direction, turret_type)`** — Any controller can now query the same raw attack pattern for a hypothetical turret at any in-bounds tile.
+- **`can_fire_from(position, direction, turret_type, target)`** — Any controller can now check whether a hypothetical turret would have a legal shot on the current map.
+
+### Balance changes
+
+- **Sentinels** — Reload increased to 3 rounds (up from 2).
+- **Gunners** — Refined axionite ammo now deals 30 damage (up from 20).
+- **Harvesters** — Base cost reduced to 20 Ti (down from 80 Ti) and scaling reduced to +5% (down from +10%).
+- **Bridges** — Scaling increased to +10% (up from +5%).
+- **Roads** — HP reduced to 5 (down from 10).
+- **Builder bots** — Base cost reduced to 30 Ti (down from 50 Ti).
+- **Starting economy** — Starting titanium reduced to 500 (down from 1000), and teams now gain 10 passive Ti every 4 rounds.
+- **Breaches** — Titanium cost reduced to 15 Ti (down from 30 Ti).
+- **Foundries** — Titanium cost reduced to 40 Ti (down from 120 Ti).
+- **Armoured conveyors** — Titanium cost reduced to 5 Ti (down from 10 Ti).
+
+### Bug fixes
+
+- Turret attacks now hit only the builder bot when a builder bot is standing on top of a building.
+- Gunners now use first-obstruction line of sight: markers are targetable but do not block, walls block without being targetable, and builder bots plus non-marker buildings are both targetable and blocking.
+- `get_gunner_target()` now returns the nearest targetable occupied tile on the forward line instead of the first non-empty tile.
+- Fixed a bug where a non-walkable building could be placed on a tile occupied by another builder bot.
+</Update>
+
+<Update label="2026-03-23" description="First balance patch" tags={["Update", "Balance", "Clarification"]}>
+  ## First balance patch (23 March 2026, 12pm GMT)
+
+Meridian Industries has approved a fleet-wide doctrine update for Titan operations. Ongoing market fluctuations in titanium and Axionite, tighter safety regulations on builder chassis, and growing command-network strain across active combat zones have forced changes to logistics, repair, and weapons protocols.
+
+### Balance changes
+
+- **Bridges** — Now add +5% scaling (up from +1%) and cost 20 Ti (up from 10 Ti).
+- **Builder self-destruct removed** — Builder bots no longer deal damage when they self-destruct.
+- **Builder attack** — Builder bots can now spend 2 Ti to deal 2 damage on the tile they are standing on.
+- **Builder healing reduced** — Healing is now 1 Ti for 4 HP (down from free 10 HP).
+- **Higher unit scaling** — Sentinels and builder bots now add +20% scaling (up from +10%).
+- **Builder bot cost** — Base cost increased to 50 Ti (up from 10 Ti).
+- **Global unit cap** — Each team can have at most 50 living units.
+- **Raw axionite delivery** — Raw axionite is now destroyed when fed to the core or turrets.
+- **Sentinel rebalance** — Reload reduced to 2 rounds, damage reduced to 10, and ammo per shot reduced to 5.
+- **Breach vision** — Vision radius² increased to 13 (up from 10).
+- **Gunners and markers** — Gunners can fire past markers.
+
+### Why we changed it
+
+- **Bridges vs conveyors** — Bridges were objectively better than conveyors, so they needed a meaningful downside.
+- **Builder rushes** — Removing builder self-destruct damage nerfs rushes, while the weak attack stops builders from becoming totally helpless.
+- **Healing efficiency** — Builder bot healing needed to be weaker so normal attacking is actually viable.
+- **Spam and runtime** — Higher unit scaling, more expensive builders, and a global unit cap all reduce spam and improve runtime.
+- **Raw axionite routing** — Destroying raw axionite at the core and turrets stops players from mining it mindlessly without refining it.
+- **Sentinel damage pacing** — The Sentinel change stops two Sentinels from instantly one-shotting a builder bot now that builders are much more expensive.
+- **Breach vision** — A breach could previously hit a target with splash that it could not see.
+- **Marker shielding** — This removes the possibility of spamming markers to defend against a gunner.
+
+### Implementation details
+
+- **Builder attack API** — The builder attack reuses `can_fire()` and `fire()` instead of getting a separate API, and it only damages the building on the acting builder bot's own tile.
+- **Unit cap counts the core** — The 50-unit cap includes the core, so a team can have at most 49 additional living units.
+- **Marker interaction** — Markers remain targetable, but unlike walls and other blocking occupants they do not block line of sight or shield occupied tiles behind them.
+- **Unit cap queries** — Added `get_unit_count()`, with the cap exposed as `GameConstants.MAX_TEAM_UNITS`, while unit-producing `can_build_*()` methods now account for the cap directly.
+- **Builder attack replay cue** — Replays now include a dedicated builder-attack event, shown in the visualiser as a small circle on the attacking builder bot.
+</Update>
+
+<Update label="2026-03-20" description="Mobile visualiser & sprint 1 maps" tags={["Feature", "Update", "Fix"]}>
+  ## Mobile visualiser and sprint 1 maps
+
+The visualiser now works on mobile, sprint 1 maps are live, and match details show more information.
+
+### New features
+
+- **Mobile visualiser** — The [visualiser](/getting-started/cli#cambc-watch) is now fully responsive. You can view replays, inspect tiles, and control playback on phones and tablets.
+- **Per-game winners** — Match detail pages and the visualiser now show which side won each individual game in a match, not just the overall result.
+
+### Updates
+
+- **Sprint 1 maps** — A new set of official maps is available for local play and ladder matches.
+- **Bot load error details** — When a bot fails to load during a match, the match detail page now shows what went wrong, making it easier to debug upload and import issues.
+- **Visualiser light theme** — The visualiser now supports a light colour scheme that matches the platform's light mode.
+
+### Bug fixes
+
+- Fixed a crash that could occur during engine execution.
+- Fixed team deletion not working on the platform.
+- Fixed bot initialisation failures causing matches to hang instead of reporting an error.
+</Update>
+
+<Update label="2026-03-19" description="Theme toggle & sandbox hardening" tags={["Feature", "Update", "Fix"]}>
+  ## Theme toggle and sandbox hardening
+
+A new light/dark theme option, tighter bot sandboxing, and several visualiser fixes.
+
+### New features
+
+- **Light/dark theme toggle** — You can now switch between light and dark mode from the sidebar or [Settings](https://game.battlecode.cam) page. Your preference is saved across sessions.
+
+### Updates
+
+- **Stronger bot sandbox** — The match execution environment is now more secure. Bots can no longer spawn threads, execute shell commands, or access process memory. These changes don't affect normal bot code — only adversarial exploits are blocked.
+- **Bot source encryption** — Bot source files are encrypted on disk during remote matches, adding an extra layer of protection for your code.
+
+### Bug fixes
+
+- Fixed cooldown counters in the [visualiser](/getting-started/cli#cambc-watch) not ticking down between rounds.
+- Fixed game result indicators in the match sidebar sometimes showing the wrong winner.
+- Fixed a bug where launchers couldn't fire under certain conditions.
+- Fixed watchdog timer reliability for time limit enforcement.
+</Update>
+
+<Update label="2026-03-18" description="API & rating improvements" tags={["Feature", "Update", "Fix"]}>
+  ## API and rating improvements
+
+New API methods, better rating visibility, and a handful of bug fixes.
+
+### New features
+
+- **`resign()` method** — Your bot can now forfeit a game by calling [`resign()`](/api/controller#healing--destruction). This immediately destroys your core and ends the game as a loss. Useful for conceding hopeless positions early.
+- **Build and spawn return entity IDs** — All [`build_*`](/api/controller#building) methods and [`spawn_builder()`](/api/controller#core) now return the new entity's `int` ID instead of `None`. You can immediately query or track the entity you just created.
+- **Post-game match summary** — Running [`cambc run`](/getting-started/cli#cambc-run) now prints a detailed summary after each game, including the winner, win condition, turn count, resources mined, and unit/building counts for both sides.
+
+### Updates
+
+- **Per-team rating deltas** — Match results now show the rating change for each team individually. Previously, only one side's delta was displayed and the other was inferred.
+- **Rating baseline adjusted** — Starting ratings have been shifted from 1500 to 1200. Existing ratings were adjusted proportionally, so relative rankings are unchanged.
+- **Rating stability floor** — A minimum rating deviation prevents ratings from becoming too sticky after many games, keeping the ladder responsive to improvement.
+- **CLI v1.1.1** — Includes all changes above plus internal stability improvements. Update with `pip install --upgrade cambc`.
+
+### Bug fixes
+
+- Fixed a visualiser animation rendering issue.
+- Fixed a stale controller bug that could cause incorrect time limit violations.
+- Fixed bot output ordering so error messages appear after the correct round.
+- Fixed a sandbox issue where bots importing certain multithreaded libraries could crash.
+- Fixed macOS resource fork files (`._ files`) polluting bot uploads.
+- Removed the virtual memory cap that was causing crashes for some bots — physical memory is still bounded at 1 GB.
+</Update>
+
+<Update label="2026-03-17" description="Launch week" tags={["Feature", "Update", "Fix"]}>
+  ## Launch week
+
+Cambridge Battlecode is live! Here's everything that shipped this week.
+
+### New features
+
+- **Map editor** — Create custom `.map26` maps in the browser with symmetry modes (rotational, horizontal, vertical), brush tools, undo (`Ctrl+Z`), and protobuf import/export. Map sizes are restricted to 20–50 tiles. Open it with [`cambc map-editor`](/getting-started/cli#cambc-map-editor) or on the [platform](https://game.battlecode.cam).
+- **Visualiser overhaul** — A completely rebuilt match visualiser with tile hover/select inspection, vision and attack range outlines on hover, indicator lines and dots, bot-step mode for stepping through individual unit turns, time-series resource graphs, and playback speed controls up to 64x.
+- **Marker inspector** — The visualiser sidebar now shows marker values in decimal, hex, and binary, making it easier to debug bot communication.
+- **`cambc watch` with bundled visualiser** — Running [`cambc watch`](/getting-started/cli#cambc-watch) on a local replay now starts a local server with the full visualiser built in. No internet or authentication required.
+- **WASD panning and Q/E zoom** — Navigate the visualiser with keyboard controls.
+- **Unrated matches** — Challenge any team to a match that doesn't affect ratings. Run [`cambc unrated`](/getting-started/cli#cambc-unrated) from the CLI. Unrated matches are prioritised over ladder matches for faster results.
+- **Head-to-head match filtering** — On the matches page, select two teams to filter for their direct matchups. Win/loss rows are now colour-coded for your team.
+- **Featured games** — The home page now highlights matches from top-ranked teams instead of closest-rated matches.
+- **Top teams chart** — A multi-line rating chart on the home page shows the top 10 teams over time, with your team highlighted.
+
+### Updates
+
+- **CLI v1.0.5** — Multiple CLI releases this week with improved Windows support, updated starter bot, and bundled maps. Install the latest with `pip install --upgrade cambc`.
+- **Game balance** — Road cost scaling corrected to 0.5% (was incorrectly listed as 1%), barrier scaling contribution added, and resource distribution algorithm overhauled.
+- **Matches are 5 games** — Each match plays exactly 5 games, not best-of-5.
+- **2ms CPU time limit** — The per-round time limit is set at 2ms on AWS Graviton3 hardware. Use [`cambc test-run`](/getting-started/cli#cambc-test-run) to benchmark your bot remotely.
+- **1 GB memory limit** — Each bot is limited to 1 GB of memory per match.
+- **Python 3.12 and 3.13 only** — Bots must target Python 3.12 or 3.13. Python 3.14 is not supported.
+- **Student status fix** — Your student/non-student status now displays correctly in settings and is editable.
+- **Matches page performance** — Active matches are capped at 50 rows with a count of additional queued matches, reducing page load times during peak scheduling.
+
+### Bug fixes
+
+- Fixed Windows encoding issues with `cambc.toml` — files written with non-UTF-8 encoding are now auto-repaired on read.
+- Fixed maps not being bundled in the Windows CLI wheel.
+- Fixed a crash on Python 3.12 related to sub-interpreter shutdown.
+- Fixed time limit enforcement reliability for bot execution.
+- Fixed foundry resource distribution bug.
+- Fixed markers being placeable on walls — they no longer are.
+- Fixed map editor allowing overlapping core placement areas.
+- Fixed visualiser texture loading when running `cambc watch` locally.
+</Update>

@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Florent Code League
 
-## Getting Started
+Platform for the Florent Code League — a Nordic university coding competition at [league.florent.vc](https://league.florent.vc).
 
-First, run the development server:
+## Structure
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+app/               Next.js 16 website (league.florent.vc)
+docs/              Game documentation (Mintlify)
+spec/              Full game rules — units, buildings, turrets, resources
+api/               Controller methods, types/enums, game constants
+getting-started/   Installation, first bot, running matches, submitting
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Website
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run dev     # dev server at localhost:3000
+npm run build   # production build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Game Docs
 
-## Learn More
+```bash
+npm i -g mint
+mint dev        # preview at localhost:3000
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Docs auto-deploy via the Mintlify GitHub app on push to `main`.

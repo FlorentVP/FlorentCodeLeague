@@ -1,0 +1,141 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "maple",
+  "name": "Cambridge Battlecode",
+  "colors": {
+    "primary": "#dc7702",
+    "light": "#f49f1e",
+    "dark": "#b86e02"
+  },
+  "fonts": {
+    "family": "Berkeley Mono",
+    "source": "/fonts/BerkeleyMono-Regular.woff2",
+    "format": "woff2",
+    "heading": {
+      "family": "Berkeley Mono",
+      "weight": 700,
+      "source": "/fonts/BerkeleyMono-Bold.woff2",
+      "format": "woff2"
+    },
+    "body": {
+      "family": "Berkeley Mono",
+      "weight": 400,
+      "source": "/fonts/BerkeleyMono-Regular.woff2",
+      "format": "woff2"
+    }
+  },
+  "appearance": {
+    "default": "dark"
+  },
+  "background": {
+    "color": {
+      "light": "#ffffff",
+      "dark": "#0c0a09"
+    }
+  },
+  "styling": {
+    "codeblocks": "dark"
+  },
+  "search": {
+    "prompt": "Search docs..."
+  },
+  "contextual": {
+    "options": ["copy", "view"]
+  },
+  "favicon": "/favicon.ico",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Getting Started",
+        "groups": [
+          {
+            "group": "Start Here",
+            "pages": [
+              "index",
+              "getting-started/installation",
+              "getting-started/first-bot",
+              "getting-started/running-matches",
+              "getting-started/submitting",
+              "getting-started/matches",
+              "getting-started/cli"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Game Rules",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": ["spec/overview", "spec/resources"]
+          },
+          {
+            "group": "Units",
+            "pages": ["spec/core", "spec/builder-bot"]
+          },
+          {
+            "group": "Buildings",
+            "pages": [
+              "spec/conveyors",
+              "spec/harvester-and-foundry",
+              "spec/other-buildings"
+            ]
+          },
+          {
+            "group": "Combat",
+            "pages": ["spec/turrets"]
+          },
+          {
+            "group": "Reference",
+            "pages": ["spec/reference"]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "API",
+            "pages": ["api/controller", "api/types", "api/constants"]
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "href": "/changelog"
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Platform",
+          "href": "https://game.battlecode.cam",
+          "icon": "gamepad"
+        },
+        {
+          "anchor": "Discord",
+          "href": "https://discord.gg/xHCygPeAq8",
+          "icon": "discord"
+        }
+      ]
+    }
+  },
+  "logo": {
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Platform",
+        "href": "https://game.battlecode.cam"
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "discord": "https://discord.gg/xHCygPeAq8",
+      "website": "https://battlecode.cam"
+    }
+  }
+}
