@@ -1,4 +1,4 @@
-import { sql } from '@vercel/postgres'
+import { neon } from '@neondatabase/serverless'
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(req: NextRequest) {
@@ -9,9 +9,8 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    const { rows } = await sql`
-      SELECT * FROM applications ORDER BY created_at DESC
-    `
+    const sql = neon(process.env.POSTGRES_URL!)
+    const rows = await sql`SELECT * FROM applications ORDER BY created_at DESC`
     return NextResponse.json({ count: rows.length, applications: rows })
   } catch (err) {
     console.error('Admin error:', err)

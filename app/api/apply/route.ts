@@ -1,8 +1,9 @@
-import { sql } from '@vercel/postgres'
+import { neon } from '@neondatabase/serverless'
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(req: NextRequest) {
   try {
+    const sql = neon(process.env.POSTGRES_URL!)
     const body = await req.json()
 
     await sql`
