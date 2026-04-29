@@ -1,11 +1,27 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: 'Bogart';
+    src: url('/fonts/Bogart-Thin-Italic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HKGrotesk';
+    src: url('/fonts/HKGrotesk-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
 
 body {
-    font-family: 'Grotesk', 'Neue Haas Grotesk', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'HKGrotesk', 'Neue Haas Grotesk', 'Helvetica Neue', Arial, sans-serif;
     background: transparent;
     color: #ffffff;
     padding: 0;
@@ -82,7 +98,7 @@ body {
     color: #fff;
 }
 .hero-title em {
-    font-family: 'Bogart', 'DM Serif Display', serif;
+    font-family: 'Bogart', 'DM Serif Display', Georgia, serif;
     font-style: italic;
     font-weight: 400;
 }
@@ -197,7 +213,7 @@ body {
     color: #fff;
 }
 .stat-num em {
-    font-family: 'Bogart', 'DM Serif Display', serif;
+    font-family: 'Bogart', 'DM Serif Display', Georgia, serif;
     font-style: italic;
     font-weight: 400;
 }
@@ -278,7 +294,7 @@ body {
     border: 1px solid rgba(255,255,255,0.12);
     border-top: none;
     padding: 28px 36px;
-    font-family: 'Bogart', 'DM Serif Display', serif;
+    font-family: 'Bogart', 'DM Serif Display', Georgia, serif;
     font-style: italic;
     font-size: 1.05em;
     color: rgba(255,255,255,0.88);
@@ -508,7 +524,7 @@ body {
     color: #fff;
 }
 .fcta-title em {
-    font-family: 'Bogart', 'DM Serif Display', serif;
+    font-family: 'Bogart', 'DM Serif Display', Georgia, serif;
     font-style: italic;
     font-weight: 400;
 }
