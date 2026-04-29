@@ -84,8 +84,8 @@ export default function LoadingScreen() {
           display: 'flex', flexDirection: 'column',
           alignItems: 'center', justifyContent: 'center',
           zIndex: 9998,
-          opacity: p2Fade ? 0 : p2Show ? 1 : 0,
-          transition: p2Fade ? 'opacity 0.8s' : 'opacity 0.8s ease',
+          opacity: p2Fade ? 0 : 1,
+          transition: 'opacity 0.8s',
         }}
       >
         <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
