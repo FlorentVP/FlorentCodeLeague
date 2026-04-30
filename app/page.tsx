@@ -361,8 +361,16 @@ export default function Home() {
       <div className="section">
         <div className="sec-hd"><span className="sec-num">02</span><h2 className="sec-title">Why Join</h2></div>
         <div className="prize-box">
-          <div className="prize-amt">€20K</div>
-          <p className="prize-lbl">Cash prize to the winning team. Compete against the strongest technical talent in the Nordics.</p>
+          <div className="prize-box-content">
+            <div className="prize-amt">€20K</div>
+            <p className="prize-lbl">Cash prize to the winning team. Compete against the strongest technical talent in the Nordics.</p>
+          </div>
+          <div className="prize-ticker-wrap">
+            <div className="prize-ticker-track">
+              {Array.from({length: 20}, (_, i) => <span key={i} className="prize-ticker-item">€</span>)}
+              {Array.from({length: 20}, (_, i) => <span key={`b${i}`} className="prize-ticker-item">€</span>)}
+            </div>
+          </div>
         </div>
         <div className="perks">
           <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Named to the Florent Nordic Top 10 Programmers list</p></div>

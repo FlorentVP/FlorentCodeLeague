@@ -535,10 +535,15 @@ body {
 /* ── PRIZE ── */
 .prize-box {
     border: 1px solid rgba(255,255,255,0.35);
-    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.prize-box-content {
     display: flex;
     align-items: baseline;
     gap: 20px;
+    padding: 40px;
 }
 .prize-amt {
     font-size: clamp(40px, 6vw, 64px);
@@ -554,6 +559,24 @@ body {
     flex: 1;
     line-height: 1.6;
     font-weight: 300;
+}
+.prize-ticker-wrap {
+    border-top: 1px solid rgba(255,255,255,0.35);
+    overflow: hidden;
+    padding: 10px 0;
+}
+.prize-ticker-track {
+    display: flex;
+    white-space: nowrap;
+    animation: fvp-tick 12s linear infinite;
+}
+.prize-ticker-item {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #FF5500;
+    padding: 0 28px;
+    flex-shrink: 0;
+    letter-spacing: 0.05em;
 }
 .perks {
     display: grid;
