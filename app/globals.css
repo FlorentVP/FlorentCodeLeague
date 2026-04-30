@@ -459,18 +459,21 @@ body {
     transition: background 0.5s ease;
 }
 .lb-row:last-child { border-bottom: none; }
-.lb-row--first { background: rgba(255,255,255,0.04); }
+.lb-row--first {
+    background: rgba(232,82,26,0.06);
+    border-left: 2px solid #E8521A;
+}
 .lb-row--changed { animation: lb-flash 0.5s ease; }
 @keyframes lb-flash {
-    0%   { background: rgba(255,255,255,0.08); }
+    0%   { background: rgba(255,255,255,0.06); }
     100% { background: transparent; }
 }
 .lb-row--first.lb-row--changed {
-    animation: lb-flash-first 0.5s ease forwards;
+    animation: lb-flash-first 0.6s ease forwards;
 }
 @keyframes lb-flash-first {
-    0%   { background: rgba(255,255,255,0.12); }
-    100% { background: rgba(255,255,255,0.04); }
+    0%   { background: rgba(232,82,26,0.22); }
+    100% { background: rgba(232,82,26,0.06); }
 }
 .lb-rank {
     font-family: 'Courier New', monospace;
@@ -478,7 +481,7 @@ body {
     color: rgba(255,255,255,0.3);
     font-weight: 600;
 }
-.lb-row--first .lb-rank { color: rgba(255,255,255,0.9); }
+.lb-row--first .lb-rank { color: #E8521A; }
 .lb-name {
     font-family: 'Courier New', monospace;
     font-size: 0.85em;
@@ -512,8 +515,8 @@ body {
     text-align: right;
     animation: lb-delta-in 2s ease forwards;
 }
-.lb-up   { color: rgba(255,255,255,0.85); }
-.lb-down { color: rgba(255,255,255,0.35); }
+.lb-up   { color: #E8521A; }
+.lb-down { color: rgba(255,255,255,0.3); }
 @keyframes lb-delta-in {
     0%  { opacity: 0; transform: translateY(-4px); }
     15% { opacity: 1; transform: translateY(0); }
