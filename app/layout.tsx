@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import LoadingScreen from "./components/LoadingScreen";
-import MaintenanceGate from "./components/MaintenanceGate";
 
 export const metadata: Metadata = {
   title: "Florent Code League 2026",
@@ -16,9 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <MaintenanceGate>
-          {children}
-        </MaintenanceGate>
+        {children}
         <LoadingScreen />
       </body>
     </html>
