@@ -122,13 +122,13 @@ export default function LoadingScreen() {
           <div style={{ textAlign: 'center', lineHeight: 1 }}>
             <span style={{
               display: 'block',
-              fontFamily: 'Helvetica Neue, Arial, sans-serif',
+              fontFamily: "'HKGrotesk', 'Helvetica Neue', Arial, sans-serif",
               fontSize: 80, fontWeight: 600,
               letterSpacing: '-0.02em', color: '#fff',
             }}>Florent</span>
             <span style={{
               display: 'block',
-              fontFamily: 'Georgia, serif',
+              fontFamily: "'Bogart', 'DM Serif Display', Georgia, serif",
               fontStyle: 'italic', fontSize: 80, fontWeight: 400,
               color: 'rgba(255,255,255,0.85)',
             }}>Code League</span>
