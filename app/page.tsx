@@ -405,7 +405,7 @@ export default function Home() {
       {/* 03 THE ARENA */}
       <div className="section">
         <div className="sec-hd"><span className="sec-num">03</span><h2 className="sec-title">The Arena</h2></div>
-        <p style={{fontSize: '0.68em', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#888', marginBottom: '32px'}}>A single, live leaderboard across the Nordics. Compete as individuals and as universities.</p>
+        <p style={{fontSize: '0.68em', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#888', marginBottom: '32px'}}>A single, live leaderboard across the Nordics.</p>
         <Leaderboard />
       </div>
 
