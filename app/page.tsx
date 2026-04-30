@@ -471,7 +471,7 @@ export default function Home() {
           <div className="uni-logo-item"><img src="/logos/sse.svg" alt="SSE" /></div>
         </div>
         <div className="uni-logos-note">
-          Not enrolled at one of these universities? You can still apply — the competition is open to any university student across the Nordics.
+          Not at one of these universities — or any university? You can still apply. The competition is open to students and self-taught developers across the Nordics. No degree required.
         </div>
       </div>
 
