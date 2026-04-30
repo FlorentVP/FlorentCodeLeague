@@ -392,7 +392,7 @@ export default function Home() {
           <div className="uni-logo-item"><img src="/logos/chalmers.svg" alt="Chalmers" /></div>
           <div className="uni-logo-item"><img src="/logos/ntnu.svg" alt="NTNU" /></div>
           <div className="uni-logo-item"><img src="/logos/lund.png" alt="Lund University" /></div>
-          <div className="uni-logo-item"><img src="/logos/uppsala.svg" alt="Uppsala University" /></div>
+          <div className="uni-logo-item"><img src="/logos/uppsala.png" alt="Uppsala University" /></div>
           <div className="uni-logo-item"><img src="/logos/ku.svg" alt="University of Copenhagen" /></div>
           <div className="uni-logo-item"><img src="/logos/helsinki.png" alt="University of Helsinki" /></div>
           <div className="uni-logo-item"><img src="/logos/sse.svg" alt="SSE" /></div>
