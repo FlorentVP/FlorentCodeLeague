@@ -651,6 +651,25 @@ body {
 .mat-arr { font-size: 0.68em; color: #888; flex-shrink: 0; }
 
 /* ── FINALS ── */
+.arena-finals-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+.arena-side {}
+.finals-side {}
+.arena-mock-badge {
+    display: inline-block;
+    font-size: 0.62em;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #555;
+    border: 1px solid #333;
+    padding: 4px 10px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+}
 .finals {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -889,6 +908,7 @@ body {
     .cities { grid-template-columns: 1fr 1fr; }
     .perks { grid-template-columns: 1fr; }
     .beg-grid { grid-template-columns: 1fr; }
+    .arena-finals-split { grid-template-columns: 1fr; gap: 48px; }
     .finals { grid-template-columns: 1fr; }
     .tl { grid-template-columns: 1fr 1fr; }
     .limited { grid-template-columns: 1fr; }
