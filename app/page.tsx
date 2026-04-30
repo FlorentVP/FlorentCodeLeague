@@ -373,7 +373,7 @@ export default function Home() {
           </div>
         </div>
         <div className="perks">
-          <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Named to the Florent Nordic Top 10 Programmers list</p></div>
+          <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Get noticed by Europe's best AI companies</p></div>
           <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Direct exposure to top VC firms</p></div>
           <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Top 32 teams qualify for Stockholm finals</p></div>
           <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Finalists flown to Stockholm, all expenses covered</p></div>
