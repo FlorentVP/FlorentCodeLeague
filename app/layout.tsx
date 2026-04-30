@@ -17,9 +17,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <MaintenanceGate>
-          <LoadingScreen />
           {children}
         </MaintenanceGate>
+        <LoadingScreen />
       </body>
     </html>
   );
