@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 200">
+
+  <!-- Crown + head silhouette -->
+  <path fill="white" d="
+    M 14,72
+    L 32,34 L 50,57 L 80,14 L 110,57 L 128,34 L 146,72
+    Q 153,72 153,79
+    L 153,190 Q 153,198 145,198
+    L 15,198 Q 7,198 7,190
+    L 7,79 Q 7,72 14,72
+    Z
+  "/>
+
+  <!-- Left eye -->
+  <rect fill="black" x="19" y="92" width="50" height="42" rx="6"/>
+  <rect fill="white"  x="31" y="105" width="13" height="16" rx="2"/>
+
+  <!-- Right eye -->
+  <rect fill="black" x="91" y="92" width="50" height="42" rx="6"/>
+  <rect fill="white"  x="103" y="105" width="13" height="16" rx="2"/>
+
+  <!-- Center sensor (between eyes) -->
+  <rect fill="black" x="74" y="108" width="12" height="10" rx="3"/>
+
+  <!-- Mouth grille -->
+  <rect fill="black" x="26" y="149" width="108" height="36" rx="6"/>
+  <rect fill="white" x="36"  y="158" width="8" height="18" rx="1"/>
+  <rect fill="white" x="50"  y="158" width="8" height="18" rx="1"/>
+  <rect fill="white" x="64"  y="158" width="8" height="18" rx="1"/>
+  <rect fill="white" x="78"  y="158" width="8" height="18" rx="1"/>
+  <rect fill="white" x="92"  y="158" width="8" height="18" rx="1"/>
+  <rect fill="white" x="106" y="158" width="8" height="18" rx="1"/>
+  <rect fill="white" x="120" y="158" width="8" height="18" rx="1"/>
+
+</svg>
