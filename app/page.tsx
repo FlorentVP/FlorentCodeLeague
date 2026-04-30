@@ -450,11 +450,33 @@ export default function Home() {
       {/* 07 TIMELINE */}
       <div className="section">
         <div className="sec-hd"><span className="sec-num">07</span><h2 className="sec-title">Timeline</h2></div>
-        <div className="tl">
-          <div className="tl-item"><div className="tl-date">Now</div><div className="tl-evt">Applications open</div></div>
-          <div className="tl-item"><div className="tl-date">July 2026</div><div className="tl-evt">Selection decisions sent</div></div>
-          <div className="tl-item"><div className="tl-date">August 2026</div><div className="tl-evt">3-week online competition</div></div>
-          <div className="tl-item"><div className="tl-date">Late August</div><div className="tl-evt">Live finals, Stockholm</div></div>
+        <div className="tl-track">
+          <div className="tl-node tl-node--active">
+            <div className="tl-node-date">Now</div>
+            <div className="tl-marker">
+              <div className="tl-pulse" />
+              <div className="tl-dot" />
+            </div>
+            <div className="tl-evt">
+              Applications Open
+              <div className="tl-live">Live</div>
+            </div>
+          </div>
+          <div className="tl-node">
+            <div className="tl-node-date">July 2026</div>
+            <div className="tl-marker"><div className="tl-dot" /></div>
+            <div className="tl-evt">Selection decisions sent</div>
+          </div>
+          <div className="tl-node">
+            <div className="tl-node-date">August 2026</div>
+            <div className="tl-marker"><div className="tl-dot" /></div>
+            <div className="tl-evt">3-week online competition</div>
+          </div>
+          <div className="tl-node">
+            <div className="tl-node-date">Late August</div>
+            <div className="tl-marker"><div className="tl-dot" /></div>
+            <div className="tl-evt">Live finals, Stockholm</div>
+          </div>
         </div>
       </div>
 
