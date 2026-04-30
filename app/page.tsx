@@ -431,8 +431,7 @@ export default function Home() {
           {/* Left: Arena */}
           <div className="arena-side">
             <div className="sec-hd"><span className="sec-num">03</span><h2 className="sec-title">The Arena</h2></div>
-            <p style={{fontSize: '0.68em', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#888', marginBottom: '16px'}}>A single, live leaderboard across the Nordics.</p>
-            <div className="arena-mock-badge">Simulated preview — not live data</div>
+            <p style={{fontSize: '0.68em', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#888', marginBottom: '32px'}}>A single, live leaderboard across the Nordics.</p>
             <Leaderboard />
           </div>
           {/* Right: Finals */}
@@ -440,8 +439,16 @@ export default function Home() {
             <div className="sec-hd"><span className="sec-num">06</span><h2 className="sec-title">Finals — Stockholm</h2></div>
             <p className="body-md">The competition starts online. It ends on stage.</p>
             <div className="finals">
-              <div className="final-cell hi"><div className="final-lbl">Elite Bracket</div><div className="final-desc">Top 8 -- main stage with live audience and real-time visualisation</div></div>
-              <div className="final-cell"><div className="final-lbl">Challenger Bracket</div><div className="final-desc">Top 32 -- live competition at the Stockholm venue</div></div>
+              <div className="final-cell hi">
+                <div className="final-lbl">Elite Bracket</div>
+                <div className="final-num">Top 8</div>
+                <div className="final-desc">Main stage — live audience and real-time visualisation</div>
+              </div>
+              <div className="final-cell">
+                <div className="final-lbl">Challenger Bracket</div>
+                <div className="final-num">Top 32</div>
+                <div className="final-desc">Live competition at the Stockholm venue</div>
+              </div>
             </div>
           </div>
         </div>
