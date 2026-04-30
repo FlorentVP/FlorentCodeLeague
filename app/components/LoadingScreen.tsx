@@ -114,12 +114,6 @@ export default function LoadingScreen() {
         transition: 'opacity 1.2s ease',
         zIndex: 11,
       }}>
-        <div style={{
-          fontFamily: 'Courier New, monospace',
-          fontSize: 11, letterSpacing: '0.3em',
-          textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)',
-          marginBottom: 20,
-        }}>Florent</div>
         <div style={{ lineHeight: 1 }}>
           <span style={{
             display: 'block',
@@ -156,7 +150,7 @@ export default function LoadingScreen() {
 
       {/* Entering the arena */}
       <div style={{
-        position: 'absolute', bottom: 48,
+        position: 'absolute', bottom: 80,
         left: '50%', transform: 'translateX(-50%)',
         zIndex: 10, display: 'flex', flexDirection: 'column',
         alignItems: 'center', gap: 16,
