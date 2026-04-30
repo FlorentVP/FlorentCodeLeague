@@ -404,6 +404,130 @@ body {
     .uni-logos { padding: 56px 24px; }
 }
 
+/* ── LEADERBOARD ── */
+.lb {
+    border: 1px solid rgba(255,255,255,0.1);
+    overflow: hidden;
+}
+.lb-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.02);
+}
+.lb-live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #fff;
+    flex-shrink: 0;
+    animation: tl-pulse 1.8s ease-out infinite;
+}
+.lb-live-label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.65em;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+}
+.lb-updated {
+    margin-left: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 0.58em;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.22);
+}
+.lb-cols {
+    display: grid;
+    grid-template-columns: 44px 1fr 44px 180px 100px;
+    padding: 8px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-family: 'Courier New', monospace;
+    font-size: 0.58em;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.22);
+}
+.lb-row {
+    display: grid;
+    grid-template-columns: 44px 1fr 44px 180px 100px;
+    padding: 15px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    align-items: center;
+    transition: background 0.5s ease;
+}
+.lb-row:last-child { border-bottom: none; }
+.lb-row--first { background: rgba(255,255,255,0.04); }
+.lb-row--changed { animation: lb-flash 0.5s ease; }
+@keyframes lb-flash {
+    0%   { background: rgba(255,255,255,0.08); }
+    100% { background: transparent; }
+}
+.lb-row--first.lb-row--changed {
+    animation: lb-flash-first 0.5s ease forwards;
+}
+@keyframes lb-flash-first {
+    0%   { background: rgba(255,255,255,0.12); }
+    100% { background: rgba(255,255,255,0.04); }
+}
+.lb-rank {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8em;
+    color: rgba(255,255,255,0.3);
+    font-weight: 600;
+}
+.lb-row--first .lb-rank { color: rgba(255,255,255,0.9); }
+.lb-name {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85em;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 0.01em;
+}
+.lb-row--first .lb-name { color: #fff; font-weight: 600; }
+.lb-flag { font-size: 1.15em; }
+.lb-school {
+    font-size: 0.65em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+}
+.lb-score-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end;
+}
+.lb-score {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85em;
+    color: rgba(255,255,255,0.6);
+}
+.lb-row--first .lb-score { color: rgba(255,255,255,0.95); }
+.lb-delta {
+    font-family: 'Courier New', monospace;
+    font-size: 0.68em;
+    min-width: 26px;
+    text-align: right;
+    animation: lb-delta-in 2s ease forwards;
+}
+.lb-up   { color: rgba(255,255,255,0.85); }
+.lb-down { color: rgba(255,255,255,0.35); }
+@keyframes lb-delta-in {
+    0%  { opacity: 0; transform: translateY(-4px); }
+    15% { opacity: 1; transform: translateY(0); }
+    75% { opacity: 1; }
+    100%{ opacity: 0; }
+}
+
+@media (max-width: 768px) {
+    .lb-cols,
+    .lb-row { grid-template-columns: 36px 1fr 36px 100px; }
+    .lb-school { display: none; }
+    .lb-cols span:nth-child(4) { display: none; }
+}
+
 /* ── PRIZE ── */
 .prize-box {
     border: 1px solid rgba(255,255,255,0.35);

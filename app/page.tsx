@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Leaderboard from './components/Leaderboard'
 
 const TARGET = new Date('2026-08-01T09:00:00')
 
@@ -405,14 +406,7 @@ export default function Home() {
       <div className="section">
         <div className="sec-hd"><span className="sec-num">03</span><h2 className="sec-title">The Arena</h2></div>
         <p style={{fontSize: '0.68em', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#888', marginBottom: '32px'}}>A single, live leaderboard across the Nordics. Compete as individuals and as universities.</p>
-        <div className="cities">
-          <div className="city"><div className="city-name">Stockholm</div><div className="city-unis">KTH<br />SSE</div></div>
-          <div className="city"><div className="city-name">Helsinki</div><div className="city-unis">Aalto<br />Univ. of Helsinki</div></div>
-          <div className="city"><div className="city-name">Copenhagen</div><div className="city-unis">DTU<br />Univ. of Copenhagen</div></div>
-          <div className="city"><div className="city-name">Gothenburg</div><div className="city-unis">Chalmers</div></div>
-          <div className="city"><div className="city-name">Trondheim</div><div className="city-unis">NTNU</div></div>
-          <div className="city"><div className="city-name">Lund + Uppsala</div><div className="city-unis">Lund University<br />Uppsala University</div></div>
-        </div>
+        <Leaderboard />
       </div>
 
       {/* UNIVERSITY LOGOS */}
