@@ -17,10 +17,11 @@ export default function LoadingScreen() {
   useEffect(() => {
     let animFrame: number
     const startTime = performance.now()
-    // Ease-out-quad: V0 * T * 0.5 = total angle
-    // V0=0.72 deg/ms, T=3000ms → 1080° = 3 full rotations → right-side up
-    const SPIN_MS = 3000
-    const V0 = 0.72
+    // Constant speed for 2s then decelerate for 2s
+    // V0=0.24 deg/ms (≈4 deg/frame), total angle = 0.24*2000 + 0.24*2000*0.5 = 480+240 = 720° = 2 rotations → right-side up
+    const CONST_MS = 2000
+    const DECEL_MS = 2000
+    const V0 = 0.24
 
     let bgDone = false, textDone = false, subDone = false
 
@@ -32,20 +33,27 @@ export default function LoadingScreen() {
       if (!subDone  && elapsed >= 2200) { subDone  = true; setShowSub(true) }
 
       const spinner = document.getElementById('fl-spinner') as HTMLElement | null
-      if (elapsed < SPIN_MS) {
-        const p = elapsed / SPIN_MS
-        const angle = V0 * SPIN_MS * (p - p * p / 2)
+      const totalSpin = CONST_MS + DECEL_MS
+
+      if (elapsed < CONST_MS) {
+        const angle = V0 * elapsed
+        if (spinner) spinner.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`
+        animFrame = requestAnimationFrame(tick)
+      } else if (elapsed < totalSpin) {
+        const t = elapsed - CONST_MS
+        const p = t / DECEL_MS
+        const angle = V0 * CONST_MS + V0 * DECEL_MS * (p - p * p / 2)
         if (spinner) spinner.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`
         animFrame = requestAnimationFrame(tick)
       } else {
         if (spinner) spinner.style.transform = 'translate(-50%, -50%) rotate(0deg)'
         setTimeout(() => setShowArena(true), 200)
         setTimeout(() => setArenaRun(true),  350)
-        setTimeout(() => setFadeOut(true),   6000)
+        setTimeout(() => setFadeOut(true),   5800)
         setTimeout(() => {
           setDone(true)
           window.dispatchEvent(new Event('loadingDone'))
-        }, 6800)
+        }, 6600)
       }
     }
 
@@ -123,7 +131,7 @@ export default function LoadingScreen() {
             display: 'block',
             fontFamily: "'Bogart', 'DM Serif Display', Georgia, serif",
             fontStyle: 'italic', fontSize: 80, fontWeight: 400,
-            color: 'rgba(255,255,255,0.85)',
+            color: '#FF5500',
           }}>Code League</span>
         </div>
       </div>
