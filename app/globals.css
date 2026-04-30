@@ -352,12 +352,12 @@ body {
 
 /* ── UNIVERSITY LOGOS ── */
 .uni-logos {
-    padding: 64px 40px;
+    padding: 80px 40px;
     border-top: 1px solid rgba(255,255,255,0.08);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 48px;
+    gap: 56px;
 }
 .uni-logos-label {
     font-size: 0.62em;
@@ -366,34 +366,34 @@ body {
     color: rgba(255,255,255,0.3);
 }
 .uni-logos-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 40px 48px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: center;
-    justify-items: center;
+    gap: 56px 0;
     width: 100%;
-    max-width: 900px;
 }
 .uni-logo-item {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 44px;
+    flex: 0 0 18%;
+    height: 72px;
 }
 .uni-logo-item img {
-    max-height: 44px;
-    max-width: 130px;
+    max-height: 72px;
+    max-width: 160px;
     width: auto;
     filter: brightness(0) invert(1);
-    opacity: 0.55;
+    opacity: 1;
     object-fit: contain;
-    transition: opacity 0.2s ease;
 }
-.uni-logo-item img:hover { opacity: 0.9; }
 
 @media (max-width: 768px) {
-    .uni-logos-grid { grid-template-columns: repeat(3, 1fr); gap: 32px 24px; }
-    .uni-logos { padding: 48px 24px; }
+    .uni-logos-grid { gap: 48px 0; }
+    .uni-logo-item { flex: 0 0 30%; height: 56px; }
+    .uni-logo-item img { max-height: 56px; max-width: 110px; }
+    .uni-logos { padding: 56px 24px; }
 }
 
 /* ── PRIZE ── */
