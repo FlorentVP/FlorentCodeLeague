@@ -711,15 +711,15 @@ body {
 .tl-node--active .tl-dot {
     width: 11px;
     height: 11px;
-    background: #fff;
+    background: #E8521A;
     border: none;
-    box-shadow: 0 0 12px rgba(255,255,255,0.6);
+    box-shadow: 0 0 12px rgba(232,82,26,0.7);
 }
 .tl-pulse {
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: rgba(255,255,255,0.45);
+    background: rgba(232,82,26,0.5);
     animation: tl-pulse 2s ease-out infinite;
 }
 @keyframes tl-pulse {
