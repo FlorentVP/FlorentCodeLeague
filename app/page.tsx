@@ -382,6 +382,23 @@ export default function Home() {
         </div>
       </div>
 
+      {/* UNIVERSITY LOGOS */}
+      <div className="uni-logos">
+        <div className="uni-logos-label">Participating Universities</div>
+        <div className="uni-logos-grid">
+          <div className="uni-logo-item"><img src="/logos/kth.svg" alt="KTH" /></div>
+          <div className="uni-logo-item"><img src="/logos/aalto.svg" alt="Aalto University" /></div>
+          <div className="uni-logo-item"><img src="/logos/dtu.svg" alt="DTU" /></div>
+          <div className="uni-logo-item"><img src="/logos/chalmers.svg" alt="Chalmers" /></div>
+          <div className="uni-logo-item"><img src="/logos/ntnu.svg" alt="NTNU" /></div>
+          <div className="uni-logo-item"><img src="/logos/lund.svg" alt="Lund University" /></div>
+          <div className="uni-logo-item"><img src="/logos/uppsala.svg" alt="Uppsala University" /></div>
+          <div className="uni-logo-item"><img src="/logos/ku.svg" alt="University of Copenhagen" /></div>
+          <div className="uni-logo-item"><img src="/logos/helsinki.svg" alt="University of Helsinki" /></div>
+          <div className="uni-logo-item"><img src="/logos/sse.svg" alt="SSE" /></div>
+        </div>
+      </div>
+
       {/* 04 WHY JOIN */}
       <div className="section">
         <div className="sec-hd"><span className="sec-num">04</span><h2 className="sec-title">Why Join</h2></div>
