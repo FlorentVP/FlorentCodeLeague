@@ -61,33 +61,30 @@ export default function LoadingScreen() {
 
   return (
     <>
-      <div
-        style={{
-          position: 'fixed', inset: 0, background: '#000',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          zIndex: 9999, opacity: p1Out ? 0 : 1,
-          transition: 'opacity 0.6s ease',
-          pointerEvents: p1Out ? 'none' : 'auto',
-        }}
-      >
+      {/* Phase 1 — bot spins */}
+      <div style={{
+        position: 'fixed', inset: 0, background: '#000',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        zIndex: 9999, opacity: p1Out ? 0 : 1,
+        transition: 'opacity 0.6s ease',
+        pointerEvents: p1Out ? 'none' : 'auto',
+      }}>
         <img
           id="fl-spinner"
-          src={SPINNER_SRC}
-          style={{ width: 120, height: 120 }}
+          src="/bot-king.png"
+          style={{ width: 120, height: 120, objectFit: 'contain' }}
           alt=""
         />
       </div>
 
-      <div
-        style={{
-          position: 'fixed', inset: 0, background: '#000',
-          display: 'flex', flexDirection: 'column',
-          alignItems: 'center', justifyContent: 'center',
-          zIndex: 9998,
-          opacity: p2Fade ? 0 : 1,
-          transition: 'opacity 0.8s',
-        }}
-      >
+      {/* Phase 2 — bot stays centered, content fades in around it */}
+      <div style={{
+        position: 'fixed', inset: 0, background: '#000',
+        zIndex: 9998,
+        opacity: p2Fade ? 0 : 1,
+        transition: 'opacity 0.8s',
+      }}>
+        {/* Hero background */}
         <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
           <img
             src={HERO_SRC}
@@ -106,20 +103,38 @@ export default function LoadingScreen() {
           background: 'radial-gradient(ellipse at center, transparent 10%, rgba(0,0,0,0.8) 100%)',
         }} />
 
+        {/* Bot — absolutely centered, same position as Phase 1 */}
+        <img
+          src="/bot-king.png"
+          alt=""
+          style={{
+            position: 'absolute',
+            top: '50%', left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: 120, height: 120, objectFit: 'contain',
+            opacity: p2Show ? 0.9 : 0,
+            transition: 'opacity 0.3s',
+            zIndex: 11,
+          }}
+        />
+
+        {/* Text above bot */}
         <div style={{
-          position: 'relative', zIndex: 10,
-          display: 'flex', flexDirection: 'column',
-          alignItems: 'center', gap: 28,
+          position: 'absolute',
+          bottom: '50%', left: '50%',
+          transform: 'translateX(-50%) translateY(-80px)',
+          textAlign: 'center', whiteSpace: 'nowrap',
           opacity: contentShow ? 1 : 0,
-          transition: 'opacity 1s ease 0.6s',
+          transition: 'opacity 1s ease 0.4s',
+          zIndex: 11,
         }}>
           <div style={{
             fontFamily: 'Courier New, monospace',
             fontSize: 11, letterSpacing: '0.3em',
             textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)',
+            marginBottom: 20,
           }}>Florent</div>
-
-          <div style={{ textAlign: 'center', lineHeight: 1 }}>
+          <div style={{ lineHeight: 1 }}>
             <span style={{
               display: 'block',
               fontFamily: "'HKGrotesk', 'Helvetica Neue', Arial, sans-serif",
@@ -133,15 +148,19 @@ export default function LoadingScreen() {
               color: 'rgba(255,255,255,0.85)',
             }}>Code League</span>
           </div>
+        </div>
 
-          <img
-            src="/bot-king.png"
-            alt=""
-            style={{ width: 120, height: 120, objectFit: 'contain', opacity: 0.9 }}
-          />
-
-          <div style={{ width: 1, height: 40, background: 'rgba(255,255,255,0.2)' }} />
-
+        {/* Text below bot */}
+        <div style={{
+          position: 'absolute',
+          top: '50%', left: '50%',
+          transform: 'translateX(-50%) translateY(90px)',
+          textAlign: 'center', whiteSpace: 'nowrap',
+          opacity: contentShow ? 1 : 0,
+          transition: 'opacity 1s ease 0.4s',
+          zIndex: 11,
+        }}>
+          <div style={{ width: 1, height: 32, background: 'rgba(255,255,255,0.2)', margin: '0 auto 20px' }} />
           <div style={{
             fontFamily: 'Courier New, monospace',
             fontSize: 13, letterSpacing: '0.2em',
@@ -149,6 +168,7 @@ export default function LoadingScreen() {
           }}>Nordic Programming Championship</div>
         </div>
 
+        {/* Progress bar */}
         <div style={{
           position: 'absolute', bottom: 48,
           left: '50%', transform: 'translateX(-50%)',
