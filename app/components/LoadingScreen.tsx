@@ -170,7 +170,7 @@ export default function LoadingScreen() {
           }}>
             <div style={{
               position: 'absolute', left: progressRun ? 0 : '-100%', top: 0, bottom: 0, width: '100%',
-              background: 'rgba(255,255,255,0.8)',
+              background: '#E8521A',
               transition: 'left 2.8s ease 0.2s',
             }} />
           </div>
