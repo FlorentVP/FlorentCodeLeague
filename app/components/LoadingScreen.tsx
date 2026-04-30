@@ -95,7 +95,7 @@ export default function LoadingScreen() {
               width: '100%', height: '100%',
               objectFit: 'cover', objectPosition: 'center 30%',
               opacity: p2Show ? 1 : 0,
-              filter: 'grayscale(100%) brightness(0.3)',
+              filter: 'grayscale(100%) brightness(0.55)',
               transition: 'opacity 1.2s ease',
             }}
             alt=""
@@ -134,20 +134,19 @@ export default function LoadingScreen() {
             }}>Code League</span>
           </div>
 
+          <img
+            src="/bot-king.png"
+            alt=""
+            style={{ width: 120, height: 120, objectFit: 'contain', opacity: 0.9 }}
+          />
+
           <div style={{ width: 1, height: 40, background: 'rgba(255,255,255,0.2)' }} />
 
           <div style={{
             fontFamily: 'Courier New, monospace',
-            fontSize: 11, letterSpacing: '0.2em',
+            fontSize: 13, letterSpacing: '0.2em',
             textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)',
-          }}>Nordic University Programming Championship</div>
-
-          <div style={{
-            fontFamily: 'Courier New, monospace',
-            fontSize: 10, letterSpacing: '0.2em',
-            textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)',
-            border: '1px solid rgba(255,255,255,0.12)', padding: '6px 16px',
-          }}>August 2026</div>
+          }}>Nordic Programming Championship</div>
         </div>
 
         <div style={{
