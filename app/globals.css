@@ -360,10 +360,18 @@ body {
     gap: 56px;
 }
 .uni-logos-label {
-    font-size: 0.62em;
-    letter-spacing: 0.22em;
+    font-size: 0.78em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
+}
+.uni-logos-note {
+    font-size: 0.72em;
+    color: rgba(255,255,255,0.38);
+    text-align: center;
+    letter-spacing: 0.04em;
+    line-height: 1.6;
 }
 .uni-logos-grid {
     display: flex;

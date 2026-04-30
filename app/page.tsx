@@ -397,6 +397,9 @@ export default function Home() {
           <div className="uni-logo-item"><img src="/logos/helsinki.png" alt="University of Helsinki" /></div>
           <div className="uni-logo-item"><img src="/logos/sse.svg" alt="SSE" /></div>
         </div>
+        <div className="uni-logos-note">
+          Not enrolled at one of these universities? You can still apply — the competition is open to any university student across the Nordics.
+        </div>
       </div>
 
       {/* 04 WHY JOIN */}
