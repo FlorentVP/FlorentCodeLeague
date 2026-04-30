@@ -431,6 +431,7 @@ export default function Home() {
           {/* Left: Arena */}
           <div className="arena-side">
             <div className="sec-hd"><span className="sec-num">03</span><h2 className="sec-title">The Arena</h2></div>
+            <p style={{fontSize: '0.68em', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#888', marginBottom: '16px'}}>A single, live leaderboard across the Nordics.</p>
             <div className="arena-mock-badge">Simulated preview — not live data</div>
             <Leaderboard />
           </div>
