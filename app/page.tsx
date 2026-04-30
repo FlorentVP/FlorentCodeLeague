@@ -356,6 +356,39 @@ export default function Home() {
         <div className="build-footer">You&apos;re not playing the game. You&apos;re building the player.</div>
       </div>
 
+      {/* TIMELINE */}
+      <div className="section">
+        <div className="sec-hd"><span className="sec-num">07</span><h2 className="sec-title">Timeline</h2></div>
+        <div className="tl-track">
+          <div className="tl-node tl-node--active">
+            <div className="tl-node-date">Now</div>
+            <div className="tl-marker">
+              <div className="tl-pulse" />
+              <div className="tl-dot" />
+            </div>
+            <div className="tl-evt">
+              Applications Open
+              <div className="tl-live">Live</div>
+            </div>
+          </div>
+          <div className="tl-node">
+            <div className="tl-node-date">July 2026</div>
+            <div className="tl-marker"><div className="tl-dot" /></div>
+            <div className="tl-evt">Selection decisions sent</div>
+          </div>
+          <div className="tl-node">
+            <div className="tl-node-date">August 2026</div>
+            <div className="tl-marker"><div className="tl-dot" /></div>
+            <div className="tl-evt">3-week online competition</div>
+          </div>
+          <div className="tl-node">
+            <div className="tl-node-date">Late August</div>
+            <div className="tl-marker"><div className="tl-dot" /></div>
+            <div className="tl-evt">Live finals, Stockholm</div>
+          </div>
+        </div>
+      </div>
+
       {/* 02 HOW IT WORKS */}
       <div className="section" id="how-it-works">
         <div className="sec-hd"><span className="sec-num">02</span><h2 className="sec-title">How It Works</h2></div>
@@ -447,39 +480,6 @@ export default function Home() {
         <div className="finals">
           <div className="final-cell hi"><div className="final-lbl">Elite Bracket</div><div className="final-desc">Top 8 -- main stage with live audience and real-time visualisation</div></div>
           <div className="final-cell"><div className="final-lbl">Challenger Bracket</div><div className="final-desc">Top 32 -- live competition at the Stockholm venue</div></div>
-        </div>
-      </div>
-
-      {/* 07 TIMELINE */}
-      <div className="section">
-        <div className="sec-hd"><span className="sec-num">07</span><h2 className="sec-title">Timeline</h2></div>
-        <div className="tl-track">
-          <div className="tl-node tl-node--active">
-            <div className="tl-node-date">Now</div>
-            <div className="tl-marker">
-              <div className="tl-pulse" />
-              <div className="tl-dot" />
-            </div>
-            <div className="tl-evt">
-              Applications Open
-              <div className="tl-live">Live</div>
-            </div>
-          </div>
-          <div className="tl-node">
-            <div className="tl-node-date">July 2026</div>
-            <div className="tl-marker"><div className="tl-dot" /></div>
-            <div className="tl-evt">Selection decisions sent</div>
-          </div>
-          <div className="tl-node">
-            <div className="tl-node-date">August 2026</div>
-            <div className="tl-marker"><div className="tl-dot" /></div>
-            <div className="tl-evt">3-week online competition</div>
-          </div>
-          <div className="tl-node">
-            <div className="tl-node-date">Late August</div>
-            <div className="tl-marker"><div className="tl-dot" /></div>
-            <div className="tl-evt">Live finals, Stockholm</div>
-          </div>
         </div>
       </div>
 
