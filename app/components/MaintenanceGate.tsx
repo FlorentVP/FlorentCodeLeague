@@ -16,8 +16,12 @@ export default function MaintenanceGate({ children }: { children: React.ReactNod
   useEffect(() => {
     if (sessionStorage.getItem(STORAGE_KEY) === '1') {
       setUnlocked(true)
+      setReady(true)
+      return
     }
-    setReady(true)
+    function onLoadingDone() { setReady(true) }
+    window.addEventListener('loadingDone', onLoadingDone)
+    return () => window.removeEventListener('loadingDone', onLoadingDone)
   }, [])
 
   function attempt(e: React.FormEvent) {

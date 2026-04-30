@@ -51,7 +51,7 @@ export default function LoadingScreen() {
       }, 300)
       setTimeout(() => setProgressRun(true), 400)
       setTimeout(() => setP2Fade(true), 4500)
-      setTimeout(() => setPhase('done'), 5300)
+      setTimeout(() => { setPhase('done'); window.dispatchEvent(new Event('loadingDone')) }, 5300)
     }
 
     return () => cancelAnimationFrame(animFrame)
