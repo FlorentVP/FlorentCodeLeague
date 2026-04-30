@@ -338,8 +338,8 @@ export default function Home() {
 
       {/* STATS */}
       <div className="stats-row">
-        <div className="stat-box"><div className="stat-num">4%</div><div className="stat-desc">of Europe&apos;s population</div></div>
-        <div className="stat-box"><div className="stat-num">15%</div><div className="stat-desc">of Europe&apos;s unicorns</div></div>
+        <div className="stat-box"><div className="stat-num">4%</div><div className="stat-desc">of Europe&apos;s population — the Nordics</div></div>
+        <div className="stat-box"><div className="stat-num">15%</div><div className="stat-desc">of Europe&apos;s unicorns come from the Nordics</div></div>
         <div className="stat-box"><div className="stat-num"><em>Top tier</em></div><div className="stat-desc">AI talent density on par with the US</div></div>
       </div>
 
