@@ -310,7 +310,7 @@ export default function Home() {
       {/* TICKER */}
       <div className="ticker-wrap">
         <div className="ticker-track">
-          <span className="t-item">KTH --</span><span className="t-item">Aalto --</span><span className="t-item">DTU --</span><span className="t-item">Chalmers --</span><span className="t-item">NTNU --</span><span className="t-item">Lund --</span><span className="t-item">Uppsala --</span><span className="t-item">Copenhagen --</span><span className="t-item">Helsinki --</span><span className="t-item">SSE --</span><span className="t-item">Stockholm Finals --</span><span className="t-item">€10K Prize --</span><span className="t-item">KTH --</span><span className="t-item">Aalto --</span><span className="t-item">DTU --</span><span className="t-item">Chalmers --</span><span className="t-item">NTNU --</span><span className="t-item">Lund --</span><span className="t-item">Uppsala --</span><span className="t-item">Copenhagen --</span><span className="t-item">Helsinki --</span><span className="t-item">SSE --</span><span className="t-item">Stockholm Finals --</span><span className="t-item">€10K Prize --</span>
+          <span className="t-item">KTH --</span><span className="t-item">Aalto --</span><span className="t-item">DTU --</span><span className="t-item">Chalmers --</span><span className="t-item">NTNU --</span><span className="t-item">Lund --</span><span className="t-item">Uppsala --</span><span className="t-item">Copenhagen --</span><span className="t-item">Helsinki --</span><span className="t-item">SSE --</span><span className="t-item">Stockholm Finals --</span><span className="t-item">€20K Prize --</span><span className="t-item">KTH --</span><span className="t-item">Aalto --</span><span className="t-item">DTU --</span><span className="t-item">Chalmers --</span><span className="t-item">NTNU --</span><span className="t-item">Lund --</span><span className="t-item">Uppsala --</span><span className="t-item">Copenhagen --</span><span className="t-item">Helsinki --</span><span className="t-item">SSE --</span><span className="t-item">Stockholm Finals --</span><span className="t-item">€20K Prize --</span>
         </div>
       </div>
 
@@ -355,6 +355,21 @@ export default function Home() {
           <div className="build-cell"><span className="build-lbl">Objective 04</span><div className="build-txt">Outmaneuver opponents on the live ladder</div></div>
         </div>
         <div className="build-footer">You&apos;re not playing the game. You&apos;re building the player.</div>
+      </div>
+
+      {/* WHY JOIN */}
+      <div className="section">
+        <div className="sec-hd"><span className="sec-num">02</span><h2 className="sec-title">Why Join</h2></div>
+        <div className="prize-box">
+          <div className="prize-amt">€20K</div>
+          <p className="prize-lbl">Cash prize to the winning team. Compete against the strongest technical talent in the Nordics.</p>
+        </div>
+        <div className="perks">
+          <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Named to the Florent Nordic Top 10 Programmers list</p></div>
+          <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Direct exposure to top global firms and investors</p></div>
+          <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Top 32 teams qualify for Stockholm finals</p></div>
+          <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Finalists flown to Stockholm, all expenses covered</p></div>
+        </div>
       </div>
 
       {/* TIMELINE */}
@@ -426,21 +441,6 @@ export default function Home() {
         </div>
         <div className="uni-logos-note">
           Not enrolled at one of these universities? You can still apply — the competition is open to any university student across the Nordics.
-        </div>
-      </div>
-
-      {/* 04 WHY JOIN */}
-      <div className="section">
-        <div className="sec-hd"><span className="sec-num">04</span><h2 className="sec-title">Why Join</h2></div>
-        <div className="prize-box">
-          <div className="prize-amt">€10K</div>
-          <p className="prize-lbl">Cash prize to the winning team. Compete against the strongest technical talent in the Nordics.</p>
-        </div>
-        <div className="perks">
-          <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Named to the Florent Nordic Top 10 Programmers list</p></div>
-          <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Direct exposure to top global firms and investors</p></div>
-          <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Top 32 teams qualify for Stockholm finals</p></div>
-          <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Student finalists flown to Stockholm</p></div>
         </div>
       </div>
 
