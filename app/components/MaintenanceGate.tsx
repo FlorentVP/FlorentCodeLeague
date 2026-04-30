@@ -48,7 +48,7 @@ export default function MaintenanceGate({ children }: { children: React.ReactNod
     }}>
       <div style={{ marginBottom: 32, textAlign: 'center' }}>
         <div style={{ fontSize: 13, letterSpacing: '0.15em', color: '#FF5500', textTransform: 'uppercase', marginBottom: 8 }}>
-          Pushing to Production
+          Under Maintenance — Pushing to Production
         </div>
         <div style={{ fontSize: 28, fontWeight: 700, color: '#fff', lineHeight: 1.2 }}>
           Florent Code League
