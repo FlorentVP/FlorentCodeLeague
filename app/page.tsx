@@ -310,7 +310,7 @@ export default function Home() {
       {/* TICKER */}
       <div className="ticker-wrap">
         <div className="ticker-track">
-          <span className="t-item">Stockholm --</span><span className="t-item">Copenhagen --</span><span className="t-item">Oslo --</span><span className="t-item">Helsinki --</span><span className="t-item">Gothenburg --</span><span className="t-item">Reykjavik --</span><span className="t-item">Aarhus --</span><span className="t-item">Bergen --</span><span className="t-item">Tampere --</span><span className="t-item">Malmö --</span><span className="t-item">€20K Prize --</span><span className="t-item">Launching August 2026 --</span><span className="t-item">Stockholm --</span><span className="t-item">Copenhagen --</span><span className="t-item">Oslo --</span><span className="t-item">Helsinki --</span><span className="t-item">Gothenburg --</span><span className="t-item">Reykjavik --</span><span className="t-item">Aarhus --</span><span className="t-item">Bergen --</span><span className="t-item">Tampere --</span><span className="t-item">Malmö --</span><span className="t-item">€20K Prize --</span><span className="t-item">Launching August 2026 --</span>
+          <span className="t-item">Stockholm --</span><span className="t-item">Copenhagen --</span><span className="t-item">Oslo --</span><span className="t-item">Helsinki --</span><span className="t-item">Gothenburg --</span><span className="t-item">Reykjavik --</span><span className="t-item">Århus --</span><span className="t-item">Bergen --</span><span className="t-item">Tampere --</span><span className="t-item">Malmö --</span><span className="t-item">€20K Prize --</span><span className="t-item">Launching August 2026 --</span><span className="t-item">Stockholm --</span><span className="t-item">Copenhagen --</span><span className="t-item">Oslo --</span><span className="t-item">Helsinki --</span><span className="t-item">Gothenburg --</span><span className="t-item">Reykjavik --</span><span className="t-item">Århus --</span><span className="t-item">Bergen --</span><span className="t-item">Tampere --</span><span className="t-item">Malmö --</span><span className="t-item">€20K Prize --</span><span className="t-item">Launching August 2026 --</span>
         </div>
       </div>
 
@@ -475,33 +475,31 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 05 NEW TO THIS */}
-      <div className="section">
-        <div className="sec-hd"><span className="sec-num">05</span><h2 className="sec-title">New to This?</h2></div>
-        <div className="beg-grid">
-          <div>
+      {/* 05 NEW TO THIS + 08 APPLY */}
+      <div className="section" id="apply">
+        <div className="new-apply-split">
+          <div className="new-apply-left">
+            <div className="sec-hd"><span className="sec-num">05</span><h2 className="sec-title">New to This?</h2></div>
             <p className="beg-p">Most participants haven&apos;t done competitive coding before. That&apos;s not a barrier -- it&apos;s the point. You&apos;ll get everything you need to get started and iterate fast.</p>
             <div className="res-list">
               <div className="res-item"><span className="res-lbl">Provided</span>A working starter bot to get you into the arena immediately</div>
               <div className="res-item"><span className="res-lbl">Provided</span>Short interactive tutorials covering the fundamentals</div>
               <div className="res-item"><span className="res-lbl">Provided</span>Fast, real feedback on every match you compete in</div>
             </div>
-          </div>
-          <div>
-            <div style={{fontSize: '0.68em', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#888', marginBottom: '20px'}}>What actually matters</div>
-            <div className="mat-list">
-              <div className="mat-item"><span className="mat-arr">-&gt;</span>How fast you learn</div>
-              <div className="mat-item"><span className="mat-arr">-&gt;</span>How you think under pressure</div>
-              <div className="mat-item"><span className="mat-arr">-&gt;</span>How you adapt when your system loses</div>
+            <div style={{marginTop: '40px'}}>
+              <div style={{fontSize: '0.68em', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#888', marginBottom: '20px'}}>What actually matters</div>
+              <div className="mat-list">
+                <div className="mat-item"><span className="mat-arr">-&gt;</span>How fast you learn</div>
+                <div className="mat-item"><span className="mat-arr">-&gt;</span>How you think under pressure</div>
+                <div className="mat-item"><span className="mat-arr">-&gt;</span>How you adapt when your system loses</div>
+              </div>
             </div>
           </div>
+          <div className="new-apply-right">
+            <div className="sec-hd"><span className="sec-num">08</span><h2 className="sec-title">Apply for Selection</h2></div>
+            <ApplyForm />
+          </div>
         </div>
-      </div>
-
-      {/* 08 APPLY */}
-      <div className="section" id="apply">
-        <div className="sec-hd"><span className="sec-num">08</span><h2 className="sec-title">Apply for Selection</h2></div>
-        <ApplyForm />
       </div>
 
       {/* FOOTER */}

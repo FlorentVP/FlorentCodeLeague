@@ -926,9 +926,25 @@ body {
     .teammate-fields { grid-template-columns: 1fr; }
 }
 
+/* ── NEW-TO-THIS + APPLY SPLIT ── */
+.new-apply-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+.new-apply-left {}
+.new-apply-right {}
+
+@media (max-width: 768px) {
+    .new-apply-split {
+        grid-template-columns: 1fr;
+        gap: 56px;
+    }
+}
+
 /* ── APPLY FORM ── */
 .apply-form {
-    max-width: 720px;
 }
 .apply-toggle {
     display: flex;
