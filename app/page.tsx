@@ -330,7 +330,7 @@ export default function Home() {
         </div>
         <div className="meta-row">
           <div className="meta-item"><span className="meta-lbl">Format</span><span className="meta-val">3 weeks online -- live finals Stockholm</span></div>
-          <div className="meta-item"><span className="meta-lbl">Open to</span><span className="meta-val">Students across the Nordics</span></div>
+          <div className="meta-item"><span className="meta-lbl">Open to</span><span className="meta-val">Created for University Students, Open for Everyone</span></div>
           <div className="meta-item"><span className="meta-lbl">Experience</span><span className="meta-val">Not required. Fast learning is.</span></div>
         </div>
         <a href="#apply" className="btn-white">Apply for Selection</a>
