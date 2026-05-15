@@ -135,7 +135,8 @@ export default function LoadingScreen() {
         position: 'absolute',
         top: '50%', left: '50%',
         transform: 'translateX(-50%) translateY(90px)',
-        textAlign: 'center', whiteSpace: 'nowrap',
+        textAlign: 'center', whiteSpace: 'normal',
+        width: '80vw', maxWidth: 400,
         opacity: showSub ? 1 : 0,
         transition: 'opacity 1.2s ease',
         zIndex: 11,
@@ -143,7 +144,7 @@ export default function LoadingScreen() {
         <div style={{ width: 1, height: 32, background: 'rgba(255,255,255,0.2)', margin: '0 auto 20px' }} />
         <div style={{
           fontFamily: 'Courier New, monospace',
-          fontSize: 15, letterSpacing: '0.22em',
+          fontSize: 'clamp(11px, 3vw, 15px)', letterSpacing: '0.22em',
           textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)',
         }}>Nordic Programming Championship</div>
       </div>
