@@ -902,22 +902,6 @@ body {
     color: #555;
 }
 
-/* ── MOBILE SECTION ORDER ── */
-@media (max-width: 768px) {
-    .wrapper { display: flex; flex-direction: column; }
-    .ticker-wrap    { order: 0; }
-    .hero           { order: 1; }
-    #the-arena      { order: 2; }
-    #how-it-works   { order: 3; }
-    #why-join       { order: 4; }
-    #what-you-build { order: 5; }
-    #timeline       { order: 6; }
-    #apply          { order: 7; }
-    .stats-row      { order: 8; }
-    .uni-logos      { order: 9; }
-    .ftr            { order: 10; }
-}
-
 /* ── MOBILE ── */
 @media (max-width: 768px) {
     .hero { padding: 48px 24px 64px; }
