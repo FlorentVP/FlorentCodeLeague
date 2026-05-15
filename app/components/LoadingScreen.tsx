@@ -145,7 +145,7 @@ export default function LoadingScreen() {
         <div style={{
           fontFamily: 'Courier New, monospace',
           fontSize: 'clamp(11px, 3vw, 15px)', letterSpacing: '0.22em',
-          textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)',
+          textTransform: 'uppercase', color: 'rgba(255,255,255,0.9)',
         }}>Nordic Programming Championship</div>
       </div>
 
