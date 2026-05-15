@@ -417,7 +417,7 @@ export default function Home() {
       <div className="section" id="how-it-works">
         <div className="how-it-works-split">
           <div className="how-it-works-img">
-            <img src="/images/how-it-works.jpg" alt="Competitor watching live arena on screen" />
+            <img src="/images/ChatGPT%20Image%20May%2015%2C%202026%2C%2011_23_54%20AM.png" alt="Competitor watching live arena on screen" />
           </div>
           <div className="how-it-works-content">
             <div className="sec-hd"><span className="sec-num">02</span><h2 className="sec-title">How It Works</h2></div>
