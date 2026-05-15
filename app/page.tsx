@@ -383,7 +383,7 @@ export default function Home() {
       </div>
 
       {/* 01 WHAT YOU BUILD */}
-      <div className="section">
+      <div className="section" id="what-you-build">
         <div className="sec-hd"><span className="sec-num">01</span><h2 className="sec-title">What You Build</h2></div>
         <p className="body-lg">You write code that controls an autonomous system competing against others in a live arena. Once deployed, it runs on its own.</p>
         <div className="build-grid">
@@ -396,7 +396,7 @@ export default function Home() {
       </div>
 
       {/* WHY JOIN */}
-      <div className="section">
+      <div className="section" id="why-join">
         <div className="sec-hd"><span className="sec-num">02</span><h2 className="sec-title">Why Join</h2></div>
         <div className="prize-box">
           <div className="prize-box-content">
@@ -419,7 +419,7 @@ export default function Home() {
       </div>
 
       {/* TIMELINE */}
-      <div className="section">
+      <div className="section" id="timeline">
         <div className="sec-hd"><span className="sec-num">07</span><h2 className="sec-title">Timeline</h2></div>
         <div className="tl-track">
           <div className="tl-node tl-node--active">
@@ -469,7 +469,7 @@ export default function Home() {
       </div>
 
       {/* 03 THE ARENA + FINALS */}
-      <div className="section">
+      <div className="section" id="the-arena">
         <div className="arena-finals-split">
           {/* Left: Arena */}
           <div className="arena-side">
