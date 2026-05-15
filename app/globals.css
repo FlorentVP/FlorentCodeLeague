@@ -926,6 +926,57 @@ body {
     .teammate-fields { grid-template-columns: 1fr; }
 }
 
+/* ── PHOTO STRIP ── */
+.photo-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 460px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    overflow: hidden;
+}
+.photo-strip-item {
+    overflow: hidden;
+    position: relative;
+}
+.photo-strip-item + .photo-strip-item {
+    border-left: 1px solid rgba(255,255,255,0.12);
+}
+.photo-strip-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.7s ease;
+}
+.photo-strip-item:hover img {
+    transform: scale(1.04);
+}
+
+/* ── ARENA SCREENSHOTS ── */
+.arena-screenshots {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.08);
+    margin-top: 40px;
+    overflow: hidden;
+}
+.arena-screenshot img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .photo-strip { grid-template-columns: 1fr; height: auto; }
+    .photo-strip-item { height: 280px; border-left: none !important; border-top: 1px solid rgba(255,255,255,0.12); }
+    .photo-strip-item:first-child { border-top: none; }
+    .arena-screenshots { grid-template-columns: 1fr; }
+}
+
 /* ── NEW-TO-THIS + APPLY SPLIT ── */
 .new-apply-split {
     display: grid;

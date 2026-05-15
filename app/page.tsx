@@ -426,6 +426,19 @@ export default function Home() {
         </div>
       </div>
 
+      {/* PHOTO STRIP */}
+      <div className="photo-strip">
+        <div className="photo-strip-item">
+          <img src="/images/Copy%20of%20Spring_Hackathon_final_Gustaf_Bergman-Ekstrom-82.jpg" alt="Competitor focused on laptop" />
+        </div>
+        <div className="photo-strip-item">
+          <img src="/images/Copy%20of%20Spring_Hackathon_final_Gustaf_Bergman-Ekstrom-4.jpg" alt="Two competitors working together" />
+        </div>
+        <div className="photo-strip-item">
+          <img src="/images/Copy%20of%20Spring_Hackathon_final_Gustaf_Bergman-Ekstrom-95%20(1).jpg" alt="Coder deep in the problem" />
+        </div>
+      </div>
+
       {/* 03 THE ARENA + FINALS */}
       <div className="section">
         <div className="arena-finals-split">
@@ -434,6 +447,10 @@ export default function Home() {
             <div className="sec-hd"><span className="sec-num">03</span><h2 className="sec-title">The Arena</h2></div>
             <p style={{fontSize: '0.68em', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#888', marginBottom: '32px'}}>A single, live leaderboard across the Nordics.</p>
             <Leaderboard />
+            <div className="arena-screenshots">
+              <div className="arena-screenshot"><img src="/images/fea294ee-98fa-4525-be6c-e519d0be4916.jpeg" alt="Arena match in progress" /></div>
+              <div className="arena-screenshot"><img src="/images/debe6541-a398-4db1-88ec-0af5bc94b3f0.jpeg" alt="Arena territory battle" /></div>
+            </div>
           </div>
           {/* Right: Finals */}
           <div className="finals-side">
