@@ -3,6 +3,44 @@
 import { useEffect, useState } from 'react'
 import Leaderboard from './components/Leaderboard'
 
+const SLIDESHOW_IMAGES = [
+  '/images/ChatGPT%20Image%20May%2015%2C%202026%2C%2011_23_54%20AM.png',
+  '/images/ChatGPT%20Image%20May%2015%2C%202026%2C%2011_59_30%20AM.png',
+  '/images/Spring_Hackathon_final_Gustaf_Bergman-Ekstrom-82.jpg',
+  '/images/Spring_Hackathon_final_Gustaf_Bergman-Ekstrom-71.jpg',
+  '/images/Spring_Hackathon_final_Gustaf_Bergman-Ekstrom-76.jpg',
+  '/images/Spring_Hackathon_final_Gustaf_Bergman-Ekstrom-79.jpg',
+  '/images/Spring_Hackathon_final_Gustaf_Bergman-Ekstrom-62.jpg',
+]
+
+function HowItWorksSlideshow() {
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrent(c => (c + 1) % SLIDESHOW_IMAGES.length)
+    }, 3000)
+    return () => clearInterval(id)
+  }, [])
+
+  return (
+    <div className="slideshow">
+      <div className="slideshow-img">
+        <img src={SLIDESHOW_IMAGES[current]} alt="Competition moment" />
+      </div>
+      <div className="slideshow-bars">
+        {SLIDESHOW_IMAGES.map((_, i) => (
+          <button
+            key={i}
+            className={`slideshow-bar${i === current ? ' active' : ''}`}
+            onClick={() => setCurrent(i)}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
 const TARGET = new Date('2026-08-01T09:00:00')
 
 function pad(n: number): string {
@@ -416,9 +454,7 @@ export default function Home() {
       {/* 02 HOW IT WORKS */}
       <div className="section" id="how-it-works">
         <div className="how-it-works-split">
-          <div className="how-it-works-img">
-            <img src="/images/ChatGPT%20Image%20May%2015%2C%202026%2C%2011_23_54%20AM.png" alt="Competitor watching live arena on screen" />
-          </div>
+          <HowItWorksSlideshow />
           <div className="how-it-works-content">
             <div className="sec-hd"><span className="sec-num">02</span><h2 className="sec-title">How It Works</h2></div>
             <div className="steps">
