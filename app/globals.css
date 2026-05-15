@@ -904,7 +904,7 @@ body {
 
 /* ── MOBILE ── */
 @media (max-width: 768px) {
-    .hero { padding: 48px 36px 64px; }
+    .hero { padding: 48px 24px 64px; }
     .section { padding: 56px 24px; }
     .league-nav { padding: 24px; }
     .ftr { padding: 24px; }
@@ -924,6 +924,12 @@ body {
     .apply-toggle { flex-direction: column; }
     .apply-fields { grid-template-columns: 1fr; }
     .teammate-fields { grid-template-columns: 1fr; }
+    /* countdown — keep all units on one row */
+    .cd-bar { gap: 12px; flex-wrap: nowrap; margin-bottom: 48px; }
+    .cd-num { font-size: 1.6em; }
+    .cd-sep { font-size: 1.4em; }
+    /* hero buttons — stack vertically */
+    .btn-white, .btn-ghost { display: block; text-align: center; margin-left: 0; margin-bottom: 12px; }
 }
 
 /* ── HOW IT WORKS SPLIT ── */
