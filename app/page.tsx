@@ -414,28 +414,21 @@ export default function Home() {
       </div>
 
       {/* 02 HOW IT WORKS */}
-      {/* 02 HOW IT WORKS */}
       <div className="section" id="how-it-works">
-        <div className="sec-hd"><span className="sec-num">02</span><h2 className="sec-title">How It Works</h2></div>
-        <div className="steps">
-          <div className="step"><span className="step-n">01</span><span className="step-c">Apply and get selected by Florent</span></div>
-          <div className="step"><span className="step-n">02</span><span className="step-c">Build your system using starter bot and tutorials</span></div>
-          <div className="step"><span className="step-n">03</span><span className="step-c">Compete on the live Nordic ladder</span></div>
-          <div className="step"><span className="step-n">04</span><span className="step-c">Improve daily and climb the rankings over 3 weeks</span></div>
-          <div className="step"><span className="step-n">05</span><span className="step-c">Top 32 teams qualify for the Stockholm finals</span></div>
-        </div>
-      </div>
-
-      {/* PHOTO STRIP */}
-      <div className="photo-strip">
-        <div className="photo-strip-item">
-          <img src="/images/Copy%20of%20Spring_Hackathon_final_Gustaf_Bergman-Ekstrom-82.jpg" alt="Competitor focused on laptop" />
-        </div>
-        <div className="photo-strip-item">
-          <img src="/images/Copy%20of%20Spring_Hackathon_final_Gustaf_Bergman-Ekstrom-4.jpg" alt="Two competitors working together" />
-        </div>
-        <div className="photo-strip-item">
-          <img src="/images/Copy%20of%20Spring_Hackathon_final_Gustaf_Bergman-Ekstrom-95%20(1).jpg" alt="Coder deep in the problem" />
+        <div className="how-it-works-split">
+          <div className="how-it-works-img">
+            <img src="/images/how-it-works.jpg" alt="Competitor watching live arena on screen" />
+          </div>
+          <div className="how-it-works-content">
+            <div className="sec-hd"><span className="sec-num">02</span><h2 className="sec-title">How It Works</h2></div>
+            <div className="steps">
+              <div className="step"><span className="step-n">01</span><span className="step-c">Apply and get selected by Florent</span></div>
+              <div className="step"><span className="step-n">02</span><span className="step-c">Build your system using starter bot and tutorials</span></div>
+              <div className="step"><span className="step-n">03</span><span className="step-c">Compete on the live Nordic ladder</span></div>
+              <div className="step"><span className="step-n">04</span><span className="step-c">Improve daily and climb the rankings over 3 weeks</span></div>
+              <div className="step"><span className="step-n">05</span><span className="step-c">Top 32 teams qualify for the Stockholm finals</span></div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -447,10 +440,6 @@ export default function Home() {
             <div className="sec-hd"><span className="sec-num">03</span><h2 className="sec-title">The Arena</h2></div>
             <p style={{fontSize: '0.68em', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#888', marginBottom: '32px'}}>A single, live leaderboard across the Nordics.</p>
             <Leaderboard />
-            <div className="arena-screenshots">
-              <div className="arena-screenshot"><img src="/images/fea294ee-98fa-4525-be6c-e519d0be4916.jpeg" alt="Arena match in progress" /></div>
-              <div className="arena-screenshot"><img src="/images/debe6541-a398-4db1-88ec-0af5bc94b3f0.jpeg" alt="Arena territory battle" /></div>
-            </div>
           </div>
           {/* Right: Finals */}
           <div className="finals-side">
