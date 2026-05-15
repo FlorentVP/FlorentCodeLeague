@@ -477,14 +477,14 @@ export default function Home() {
             <p className="body-md">The competition starts online. It ends on stage.</p>
             <div className="finals">
               <div className="final-cell hi">
-                <div className="final-lbl">Elite Bracket</div>
-                <div className="final-num">Top 8</div>
-                <div className="final-desc">Main stage — live audience and real-time visualisation</div>
+                <div className="final-lbl">Student Teams</div>
+                <div className="final-num">16</div>
+                <div className="final-desc">Finalist student teams compete live in Stockholm</div>
               </div>
               <div className="final-cell">
-                <div className="final-lbl">Challenger Bracket</div>
-                <div className="final-num">Top 32</div>
-                <div className="final-desc">Live competition at the Stockholm venue</div>
+                <div className="final-lbl">Non-Student Teams</div>
+                <div className="final-num">2</div>
+                <div className="final-desc">Finalist non-student teams compete live in Stockholm</div>
               </div>
             </div>
           </div>
