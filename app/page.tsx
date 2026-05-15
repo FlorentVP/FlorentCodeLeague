@@ -375,12 +375,6 @@ export default function Home() {
         <a href="#how-it-works" className="btn-ghost">How it works</a>
       </div>
 
-      {/* STATS */}
-      <div className="stats-row">
-        <div className="stat-box"><div className="stat-num">4%</div><div className="stat-desc">of Europe&apos;s population — the Nordics</div></div>
-        <div className="stat-box"><div className="stat-num">15%</div><div className="stat-desc">of Europe&apos;s unicorns come from the Nordics</div></div>
-        <div className="stat-box"><div className="stat-num"><em>Top tier</em></div><div className="stat-desc">AI talent density on par with the US</div></div>
-      </div>
 
       {/* 01 WHAT YOU BUILD */}
       <div className="section" id="what-you-build">
