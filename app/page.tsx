@@ -531,7 +531,7 @@ export default function Home() {
               </div>
               <div className="final-cell">
                 <div className="final-lbl">Non-Student Teams</div>
-                <div className="final-num">2</div>
+                <div className="final-num">4</div>
                 <div className="final-desc">Finalist non-student teams compete live in Stockholm</div>
               </div>
             </div>
