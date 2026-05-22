@@ -192,15 +192,6 @@ function ApplicantFields({
           onChange={e => onChange('discord', e.target.value)}
         />
       </div>
-      <div className="apply-field full">
-        <span className="field-lbl">Company (optional)</span>
-        <input
-          className="field-input"
-          placeholder="Acme Inc."
-          value={data.company}
-          onChange={e => onChange('company', e.target.value)}
-        />
-      </div>
     </div>
   )
 }
