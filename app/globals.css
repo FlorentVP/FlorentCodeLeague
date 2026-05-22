@@ -1137,6 +1137,32 @@ body {
     text-transform: uppercase;
     margin-top: 2px;
 }
+.role-toggle {
+    display: flex;
+    gap: 0;
+    border: 1px solid rgba(255,255,255,0.2);
+    width: fit-content;
+    margin-top: 8px;
+}
+.role-btn {
+    background: transparent;
+    color: rgba(255,255,255,0.4);
+    border: none;
+    padding: 10px 28px;
+    font-size: 0.75em;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s, color 0.15s;
+}
+.role-btn.active {
+    background: #fff;
+    color: #000;
+}
+.role-btn:not(.active):hover { color: rgba(255,255,255,0.7); }
+
 .apply-submit {
     display: flex;
     align-items: center;

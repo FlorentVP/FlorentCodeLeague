@@ -72,10 +72,12 @@ type Applicant = {
   discord: string
   hometown: string
   company: string
+  school: string
+  role: 'student' | 'professional' | ''
 }
 
 const emptyApplicant = (): Applicant => ({
-  fullName: '', email: '', linkedin: '', discord: '', hometown: '', company: '',
+  fullName: '', email: '', linkedin: '', discord: '', hometown: '', company: '', school: '', role: '',
 })
 
 type Errors = Record<string, string>
@@ -85,7 +87,6 @@ function validateApplicant(a: Applicant, prefix: string): Errors {
   if (!a.fullName.trim()) e[`${prefix}.fullName`] = 'Required'
   if (!a.email.trim()) e[`${prefix}.email`] = 'Required'
   else if (!a.email.includes('@')) e[`${prefix}.email`] = 'Invalid email'
-  else if (!isSchoolEmail(a.email)) e[`${prefix}.email`] = 'School email required'
   if (!a.linkedin.trim()) e[`${prefix}.linkedin`] = 'Required'
   if (!a.hometown.trim()) e[`${prefix}.hometown`] = 'Required'
   return e
@@ -104,6 +105,21 @@ function ApplicantFields({
 }) {
   return (
     <div className="apply-fields">
+      <div className="apply-field full">
+        <span className="field-lbl">I am a *</span>
+        <div className="role-toggle">
+          <button
+            type="button"
+            className={`role-btn${data.role === 'student' ? ' active' : ''}`}
+            onClick={() => onChange('role', 'student')}
+          >Student</button>
+          <button
+            type="button"
+            className={`role-btn${data.role === 'professional' ? ' active' : ''}`}
+            onClick={() => onChange('role', 'professional')}
+          >Founder / Employee</button>
+        </div>
+      </div>
       <div className="apply-field">
         <span className="field-lbl">Full Name *</span>
         <input
@@ -115,7 +131,7 @@ function ApplicantFields({
         {errors[`${prefix}.fullName`] && <span className="field-error">{errors[`${prefix}.fullName`]}</span>}
       </div>
       <div className="apply-field">
-        <span className="field-lbl">School Email *</span>
+        <span className="field-lbl">Email *</span>
         <input
           className="field-input"
           type="email"
@@ -145,6 +161,28 @@ function ApplicantFields({
         />
         {errors[`${prefix}.hometown`] && <span className="field-error">{errors[`${prefix}.hometown`]}</span>}
       </div>
+      {data.role === 'student' && (
+        <div className="apply-field full">
+          <span className="field-lbl">University / School</span>
+          <input
+            className="field-input"
+            placeholder="KTH Royal Institute of Technology"
+            value={data.school}
+            onChange={e => onChange('school', e.target.value)}
+          />
+        </div>
+      )}
+      {data.role === 'professional' && (
+        <div className="apply-field full">
+          <span className="field-lbl">Company</span>
+          <input
+            className="field-input"
+            placeholder="Acme Inc."
+            value={data.company}
+            onChange={e => onChange('company', e.target.value)}
+          />
+        </div>
+      )}
       <div className="apply-field full">
         <span className="field-lbl">Discord (optional)</span>
         <input
