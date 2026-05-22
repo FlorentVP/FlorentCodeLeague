@@ -15,6 +15,7 @@ export async function POST(req: NextRequest) {
         linkedin TEXT NOT NULL,
         discord TEXT,
         hometown TEXT NOT NULL,
+        company TEXT,
         team_name TEXT,
         teammates JSONB,
         created_at TIMESTAMPTZ DEFAULT NOW()
@@ -22,7 +23,7 @@ export async function POST(req: NextRequest) {
     `
 
     await sql`
-      INSERT INTO applications (type, full_name, email, linkedin, discord, hometown, team_name, teammates)
+      INSERT INTO applications (type, full_name, email, linkedin, discord, hometown, company, team_name, teammates)
       VALUES (
         ${body.type},
         ${body.primary.fullName},
@@ -30,6 +31,7 @@ export async function POST(req: NextRequest) {
         ${body.primary.linkedin},
         ${body.primary.discord || null},
         ${body.primary.hometown},
+        ${body.primary.company || null},
         ${body.teamName || null},
         ${body.teammates?.length ? JSON.stringify(body.teammates) : null}
       )

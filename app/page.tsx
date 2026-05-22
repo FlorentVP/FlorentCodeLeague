@@ -71,10 +71,11 @@ type Applicant = {
   linkedin: string
   discord: string
   hometown: string
+  company: string
 }
 
 const emptyApplicant = (): Applicant => ({
-  fullName: '', email: '', linkedin: '', discord: '', hometown: '',
+  fullName: '', email: '', linkedin: '', discord: '', hometown: '', company: '',
 })
 
 type Errors = Record<string, string>
@@ -151,6 +152,15 @@ function ApplicantFields({
           placeholder="ada#1234"
           value={data.discord}
           onChange={e => onChange('discord', e.target.value)}
+        />
+      </div>
+      <div className="apply-field full">
+        <span className="field-lbl">Company (optional)</span>
+        <input
+          className="field-input"
+          placeholder="Acme Inc."
+          value={data.company}
+          onChange={e => onChange('company', e.target.value)}
         />
       </div>
     </div>
