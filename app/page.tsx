@@ -77,7 +77,7 @@ type Applicant = {
 }
 
 const emptyApplicant = (): Applicant => ({
-  fullName: '', email: '', linkedin: '', discord: '', hometown: '', company: '', school: '', role: '',
+  fullName: '', email: '', linkedin: '', discord: '', hometown: '', company: '', school: '', role: 'student',
 })
 
 type Errors = Record<string, string>
