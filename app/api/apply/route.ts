@@ -15,14 +15,14 @@ export async function POST(req: NextRequest) {
         linkedin TEXT NOT NULL,
         discord TEXT,
         hometown TEXT NOT NULL,
-        role TEXT,
-        company TEXT,
-        school TEXT,
         team_name TEXT,
         teammates JSONB,
         created_at TIMESTAMPTZ DEFAULT NOW()
       )
     `
+    await sql`ALTER TABLE applications ADD COLUMN IF NOT EXISTS role TEXT`
+    await sql`ALTER TABLE applications ADD COLUMN IF NOT EXISTS company TEXT`
+    await sql`ALTER TABLE applications ADD COLUMN IF NOT EXISTS school TEXT`
 
     await sql`
       INSERT INTO applications (type, full_name, email, linkedin, discord, hometown, role, company, school, team_name, teammates)
