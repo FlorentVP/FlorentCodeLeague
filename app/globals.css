@@ -82,8 +82,8 @@ body {
 }
 .ticker-bot {
     display: inline-block;
-    width: 1.6em;
-    height: 1.6em;
+    width: 2em;
+    height: 2em;
     background-color: #FF5500;
     -webkit-mask-image: url('/bot-king.png');
     mask-image: url('/bot-king.png');
@@ -659,8 +659,8 @@ body {
 }
 .prize-bot {
     display: inline-block;
-    width: 1.1em;
-    height: 1.1em;
+    width: 1.6em;
+    height: 1.6em;
     background-color: #FF5500;
     -webkit-mask-image: url('/bot-king.png');
     mask-image: url('/bot-king.png');
