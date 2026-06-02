@@ -387,7 +387,9 @@ export default function Home() {
       {/* TICKER */}
       <div className="ticker-wrap">
         <div className="ticker-track">
-          <span className="t-item">Stockholm --</span><span className="t-item">Copenhagen --</span><span className="t-item">Oslo --</span><span className="t-item">Helsinki --</span><span className="t-item">Gothenburg --</span><span className="t-item">Reykjavik --</span><span className="t-item">Århus --</span><span className="t-item">Bergen --</span><span className="t-item">Tampere --</span><span className="t-item">Malmö --</span><span className="t-item">€20K Prize --</span><span className="t-item">Launching August 2026 --</span><span className="t-item">Stockholm --</span><span className="t-item">Copenhagen --</span><span className="t-item">Oslo --</span><span className="t-item">Helsinki --</span><span className="t-item">Gothenburg --</span><span className="t-item">Reykjavik --</span><span className="t-item">Århus --</span><span className="t-item">Bergen --</span><span className="t-item">Tampere --</span><span className="t-item">Malmö --</span><span className="t-item">€20K Prize --</span><span className="t-item">Launching August 2026 --</span>
+          {['Stockholm','Copenhagen','Oslo','Helsinki','Gothenburg','Reykjavik','Århus','Bergen','Tampere','Malmö','€20K Prize','Launching August 2026','Stockholm','Copenhagen','Oslo','Helsinki','Gothenburg','Reykjavik','Århus','Bergen','Tampere','Malmö','€20K Prize','Launching August 2026'].map((item, i) => (
+            <span key={i} className="t-item">{item} <img src="/bot-king.png" alt="" className="ticker-bot" /></span>
+          ))}
         </div>
       </div>
 
@@ -395,7 +397,6 @@ export default function Home() {
       <div className="hero">
         <div className="hero-eyebrow">Launching August 2026 -- Applications Open Now</div>
         <div className="hero-logo">
-          <img src="/bot-king.png" alt="Florent bot" className="hero-logo-bot" />
           <div className="hero-logo-text">
             <div className="hero-logo-florent">FLORENT</div>
             <div className="hero-logo-cl">&lt;CODE LEAGUE&gt;</div>
@@ -454,8 +455,8 @@ export default function Home() {
           </div>
           <div className="prize-ticker-wrap">
             <div className="prize-ticker-track">
-              {Array.from({length: 20}, (_, i) => <span key={i} className="prize-ticker-item">€</span>)}
-              {Array.from({length: 20}, (_, i) => <span key={`b${i}`} className="prize-ticker-item">€</span>)}
+              {Array.from({length: 20}, (_, i) => <span key={i} className="prize-ticker-item">€<img src="/bot-king.png" alt="" className="prize-bot" /></span>)}
+              {Array.from({length: 20}, (_, i) => <span key={`b${i}`} className="prize-ticker-item">€<img src="/bot-king.png" alt="" className="prize-bot" /></span>)}
             </div>
           </div>
         </div>

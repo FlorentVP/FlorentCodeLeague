@@ -118,15 +118,17 @@ export default function LoadingScreen() {
           <span style={{
             display: 'block',
             fontFamily: "'HKGrotesk', 'Helvetica Neue', Arial, sans-serif",
-            fontSize: 80, fontWeight: 600,
-            letterSpacing: '-0.02em', color: '#fff',
-          }}>Florent</span>
+            fontSize: 80, fontWeight: 700,
+            letterSpacing: '0.04em', color: '#fff',
+            textTransform: 'uppercase',
+          }}>FLORENT</span>
           <span style={{
             display: 'block',
-            fontFamily: "'Bogart', 'DM Serif Display', Georgia, serif",
-            fontStyle: 'italic', fontSize: 80, fontWeight: 400,
+            fontFamily: "'Courier New', Courier, monospace",
+            fontSize: 28, fontWeight: 400,
+            letterSpacing: '0.12em',
             color: '#FF5500',
-          }}>Code League</span>
+          }}>&lt;CODE LEAGUE&gt;</span>
         </div>
       </div>
 
