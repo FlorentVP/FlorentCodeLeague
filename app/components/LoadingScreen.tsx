@@ -145,7 +145,7 @@ export default function LoadingScreen() {
       }}>
         <div style={{ width: 1, height: 32, background: 'rgba(255,255,255,0.2)', margin: '0 auto 20px' }} />
         <div style={{
-          fontFamily: 'Courier New, monospace',
+          fontFamily: "'HKGrotesk', 'Neue Haas Grotesk', 'Helvetica Neue', Arial, sans-serif",
           fontSize: 'clamp(11px, 3vw, 15px)', letterSpacing: '0.22em',
           textTransform: 'uppercase', color: 'rgba(255,255,255,0.9)',
         }}>Nordic Programming Championship</div>
