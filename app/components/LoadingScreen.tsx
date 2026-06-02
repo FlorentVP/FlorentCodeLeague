@@ -114,7 +114,7 @@ export default function LoadingScreen() {
         transition: 'opacity 1.2s ease',
         zIndex: 11,
       }}>
-        <div style={{ lineHeight: 1 }}>
+        <div style={{ lineHeight: 1, display: 'flex', flexDirection: 'column', gap: 10 }}>
           <span style={{
             display: 'block',
             fontFamily: "'HKGrotesk', 'Helvetica Neue', Arial, sans-serif",

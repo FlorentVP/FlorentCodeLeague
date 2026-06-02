@@ -112,7 +112,7 @@ body {
 .hero-logo-text {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 10px;
 }
 .hero-logo-florent {
     font-family: 'HKGrotesk', 'Neue Haas Grotesk', 'Helvetica Neue', Arial, sans-serif;
