@@ -455,8 +455,12 @@ export default function Home() {
           </div>
           <div className="prize-ticker-wrap">
             <div className="prize-ticker-track">
-              {Array.from({length: 20}, (_, i) => <span key={i} className="prize-ticker-item">€<img src="/bot-king.png" alt="" className="prize-bot" /></span>)}
-              {Array.from({length: 20}, (_, i) => <span key={`b${i}`} className="prize-ticker-item">€<img src="/bot-king.png" alt="" className="prize-bot" /></span>)}
+              {Array.from({length: 20}, (_, i) => (
+                <span key={i} className="prize-ticker-item">€</span>
+              )).flatMap((el, i) => [el, <span key={`bot${i}`} className="prize-ticker-item"><img src="/bot-king.png" alt="" className="prize-bot" /></span>])}
+              {Array.from({length: 20}, (_, i) => (
+                <span key={`b${i}`} className="prize-ticker-item">€</span>
+              )).flatMap((el, i) => [el, <span key={`bbot${i}`} className="prize-ticker-item"><img src="/bot-king.png" alt="" className="prize-bot" /></span>])}
             </div>
           </div>
         </div>
