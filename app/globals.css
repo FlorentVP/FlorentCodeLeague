@@ -129,6 +129,7 @@ body {
     letter-spacing: 0.12em;
     color: #FF5500;
     line-height: 1;
+    padding-left: 1ch;
 }
 .hero-sub {
     font-size: 1.25em;
