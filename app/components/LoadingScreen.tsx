@@ -147,7 +147,7 @@ export default function LoadingScreen() {
         <div style={{
           fontFamily: "'HKGrotesk', 'Neue Haas Grotesk', 'Helvetica Neue', Arial, sans-serif",
           fontSize: 'clamp(11px, 3vw, 15px)', letterSpacing: '0.22em',
-          color: 'rgba(255,255,255,0.9)',
+          textTransform: 'uppercase', color: 'rgba(255,255,255,0.9)',
         }}>Nordic Programming Championship</div>
       </div>
 

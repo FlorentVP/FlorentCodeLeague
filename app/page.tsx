@@ -388,7 +388,7 @@ export default function Home() {
       <div className="ticker-wrap">
         <div className="ticker-track">
           {['Stockholm','Copenhagen','Oslo','Helsinki','Gothenburg','Reykjavik','Århus','Bergen','Tampere','Malmö','€20K Prize','Launching August 2026','Stockholm','Copenhagen','Oslo','Helsinki','Gothenburg','Reykjavik','Århus','Bergen','Tampere','Malmö','€20K Prize','Launching August 2026'].map((item, i) => (
-            <span key={i} className="t-item">{item} <img src="/bot-king.png" alt="" className="ticker-bot" /></span>
+            <span key={i} className="t-item">{item} <span className="ticker-bot" /></span>
           ))}
         </div>
       </div>
@@ -457,10 +457,10 @@ export default function Home() {
             <div className="prize-ticker-track">
               {Array.from({length: 20}, (_, i) => (
                 <span key={i} className="prize-ticker-item">€</span>
-              )).flatMap((el, i) => [el, <span key={`bot${i}`} className="prize-ticker-item"><img src="/bot-king.png" alt="" className="prize-bot" /></span>])}
+              )).flatMap((el, i) => [el, <span key={`bot${i}`} className="prize-ticker-item"><span className="prize-bot" /></span>])}
               {Array.from({length: 20}, (_, i) => (
                 <span key={`b${i}`} className="prize-ticker-item">€</span>
-              )).flatMap((el, i) => [el, <span key={`bbot${i}`} className="prize-ticker-item"><img src="/bot-king.png" alt="" className="prize-bot" /></span>])}
+              )).flatMap((el, i) => [el, <span key={`bbot${i}`} className="prize-ticker-item"><span className="prize-bot" /></span>])}
             </div>
           </div>
         </div>
