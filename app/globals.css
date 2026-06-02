@@ -83,7 +83,7 @@ body {
 .ticker-bot {
     height: 1.6em;
     width: auto;
-    filter: brightness(0) saturate(100%) invert(40%) sepia(90%) saturate(800%) hue-rotate(0deg);
+    filter: brightness(0) saturate(100%) invert(46%) sepia(98%) saturate(740%) hue-rotate(357deg) brightness(103%);
     vertical-align: middle;
 }
 
@@ -649,7 +649,7 @@ body {
 .prize-bot {
     height: 1.1em;
     width: auto;
-    filter: brightness(0) saturate(100%) invert(40%) sepia(90%) saturate(800%) hue-rotate(0deg);
+    filter: brightness(0) saturate(100%) invert(46%) sepia(98%) saturate(740%) hue-rotate(357deg) brightness(103%);
     vertical-align: middle;
 }
 .perks {
