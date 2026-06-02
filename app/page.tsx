@@ -415,6 +415,16 @@ export default function Home() {
       </div>
 
 
+      {/* SPONSORS */}
+      <div className="sponsors">
+        <div className="sponsors-label">Sponsored by</div>
+        <div className="sponsors-grid">
+          <div className="sponsor-item">
+            <img src="/logos/anthropic.svg" alt="Anthropic" />
+          </div>
+        </div>
+      </div>
+
       {/* 01 WHAT YOU BUILD */}
       <div className="section" id="what-you-build">
         <div className="sec-hd"><span className="sec-num">01</span><h2 className="sec-title">What You Build</h2></div>
@@ -573,16 +583,6 @@ export default function Home() {
           <div className="new-apply-right">
             <div className="sec-hd"><span className="sec-num">08</span><h2 className="sec-title">Apply for Selection</h2></div>
             <ApplyForm />
-          </div>
-        </div>
-      </div>
-
-      {/* SPONSORS */}
-      <div className="sponsors">
-        <div className="sponsors-label">Sponsored by</div>
-        <div className="sponsors-grid">
-          <div className="sponsor-item">
-            <img src="/logos/anthropic.svg" alt="Anthropic" />
           </div>
         </div>
       </div>
