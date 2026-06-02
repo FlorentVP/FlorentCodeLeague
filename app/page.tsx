@@ -394,7 +394,13 @@ export default function Home() {
       {/* HERO */}
       <div className="hero">
         <div className="hero-eyebrow">Launching August 2026 -- Applications Open Now</div>
-        <h1 className="hero-title">Florent<br /><em>Code League</em></h1>
+        <div className="hero-logo">
+          <img src="/bot-king.png" alt="Florent bot" className="hero-logo-bot" />
+          <div className="hero-logo-text">
+            <div className="hero-logo-florent">FLORENT</div>
+            <div className="hero-logo-cl">&lt;CODE LEAGUE&gt;</div>
+          </div>
+        </div>
         <p className="hero-sub">Find out if you&apos;re in the top 1% of programmers in the Nordics.</p>
         <div className="cd-bar">
           <div className="cd-unit"><span className="cd-num">{time.days}</span><span className="cd-lbl">Days</span></div>

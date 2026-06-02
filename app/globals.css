@@ -89,19 +89,37 @@ body {
     color: #888;
     margin-bottom: 28px;
 }
-.hero-title {
-    font-size: clamp(48px, 7vw, 84px);
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    line-height: 1;
+.hero-logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     margin-bottom: 24px;
+}
+.hero-logo-bot {
+    height: clamp(64px, 8vw, 100px);
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+.hero-logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.hero-logo-florent {
+    font-family: 'HKGrotesk', 'Neue Haas Grotesk', 'Helvetica Neue', Arial, sans-serif;
+    font-size: clamp(36px, 5.5vw, 72px);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1;
     color: #fff;
 }
-.hero-title em {
-    font-family: 'Bogart', 'DM Serif Display', Georgia, serif;
-    font-style: italic;
+.hero-logo-cl {
+    font-family: 'Courier New', 'Courier', monospace;
+    font-size: clamp(14px, 2vw, 26px);
     font-weight: 400;
+    letter-spacing: 0.12em;
     color: #FF5500;
+    line-height: 1;
 }
 .hero-sub {
     font-size: 1.25em;
