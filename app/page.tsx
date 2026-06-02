@@ -577,6 +577,16 @@ export default function Home() {
         </div>
       </div>
 
+      {/* SPONSORS */}
+      <div className="sponsors">
+        <div className="sponsors-label">Sponsored by</div>
+        <div className="sponsors-grid">
+          <div className="sponsor-item">
+            <img src="/logos/anthropic.svg" alt="Anthropic" />
+          </div>
+        </div>
+      </div>
+
       {/* FOOTER */}
       <div className="ftr">
         <span>Florent Venture Partners -- florent.vc</span>

@@ -405,6 +405,42 @@ body {
     .uni-logos { padding: 56px 24px; }
 }
 
+/* ── SPONSORS ── */
+.sponsors {
+    padding: 72px 40px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+.sponsors-label {
+    font-size: 0.78em;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    font-weight: 500;
+}
+.sponsors-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 56px;
+}
+.sponsor-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sponsor-item img {
+    height: 32px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+    object-fit: contain;
+}
+
 /* ── LEADERBOARD ── */
 .lb {
     border: 1px solid rgba(255,255,255,0.1);
