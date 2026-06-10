@@ -467,8 +467,8 @@ export default function Home() {
         <div className="perks">
           <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Get noticed by Europe's best AI companies</p></div>
           <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Direct exposure to top VC firms</p></div>
-          <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Top 32 teams qualify for Stockholm finals</p></div>
-          <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Finalists flown to Stockholm, all expenses covered</p></div>
+          <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Top 16 teams qualify for Stockholm finals</p></div>
+          <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">International student finalists, travel expenses covered</p></div>
         </div>
       </div>
 
@@ -516,7 +516,7 @@ export default function Home() {
               <div className="step"><span className="step-n">02</span><span className="step-c">Build your system using starter bot and tutorials</span></div>
               <div className="step"><span className="step-n">03</span><span className="step-c">Compete on the live Nordic ladder</span></div>
               <div className="step"><span className="step-n">04</span><span className="step-c">Improve daily and climb the rankings over 3 weeks</span></div>
-              <div className="step"><span className="step-n">05</span><span className="step-c">Top 32 teams qualify for the Stockholm finals</span></div>
+              <div className="step"><span className="step-n">05</span><span className="step-c">Top 16 teams qualify for the Stockholm finals</span></div>
             </div>
           </div>
         </div>
@@ -553,7 +553,7 @@ export default function Home() {
 
       {/* UNIVERSITY LOGOS */}
       <div className="uni-logos">
-        <div className="uni-logos-label">Where applicants study</div>
+        <div className="uni-logos-label">Many top universities represented</div>
         <div className="uni-logos-grid">
           <div className="uni-logo-item"><img src="/logos/kth.svg" alt="KTH" /></div>
           <div className="uni-logo-item"><img src="/logos/aalto.svg" alt="Aalto University" /></div>
