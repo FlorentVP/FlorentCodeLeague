@@ -1045,6 +1045,12 @@ body {
     display: block;
     filter: grayscale(100%);
 }
+.slideshow-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid rgba(255,255,255,0.08);
+}
 .slideshow-bars {
     display: flex;
     gap: 6px;
