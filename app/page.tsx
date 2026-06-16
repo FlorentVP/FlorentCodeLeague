@@ -404,10 +404,10 @@ export default function Home() {
         <div className="sponsors-label">Sponsored by</div>
         <div className="sponsors-grid">
           <div className="sponsor-item">
-            <img src="/logos/anthropic.svg" alt="Anthropic" />
+            <img src="/logos/d-dagen.png" alt="D-Dagen" />
           </div>
           <div className="sponsor-item">
-            <img src="/logos/d-dagen.png" alt="D-Dagen" />
+            <img src="/logos/anthropic.svg" alt="Anthropic" />
           </div>
           <div className="sponsor-item sponsor-item--text">
             KTH Innovation

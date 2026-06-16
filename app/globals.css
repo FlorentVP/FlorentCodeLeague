@@ -464,9 +464,9 @@ body {
 .sponsors-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 64px;
+    width: 100%;
 }
 .sponsor-item {
     display: flex;
