@@ -466,26 +466,29 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 56px;
+    gap: 64px;
 }
 .sponsor-item {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 32px;
 }
 .sponsor-item img {
-    height: 24px;
+    height: 32px;
     width: auto;
+    max-width: 160px;
     filter: brightness(0) invert(1);
     opacity: 0.7;
     object-fit: contain;
 }
 .sponsor-item--text {
     font-family: 'HKGrotesk', 'Neue Haas Grotesk', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 600;
     letter-spacing: 0.04em;
     color: rgba(255,255,255,0.7);
+    line-height: 32px;
 }
 
 /* ── LEADERBOARD ── */
