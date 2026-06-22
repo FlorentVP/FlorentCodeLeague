@@ -63,8 +63,9 @@ function validateApplicant(a: Applicant, prefix: string): Errors {
   const e: Errors = {}
   if (!a.fullName.trim()) e[`${prefix}.fullName`] = 'Required'
   if (!a.email.trim()) e[`${prefix}.email`] = 'Required'
-  else if (!a.email.includes('@')) e[`${prefix}.email`] = 'Invalid email'
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(a.email)) e[`${prefix}.email`] = 'Invalid email'
   if (!a.linkedin.trim()) e[`${prefix}.linkedin`] = 'Required'
+  else if (!a.linkedin.includes('linkedin.com/in/')) e[`${prefix}.linkedin`] = 'Must be a linkedin.com/in/ URL'
   if (!a.hometown.trim()) e[`${prefix}.hometown`] = 'Required'
   return e
 }
@@ -299,7 +300,7 @@ function ApplyForm() {
                   {errors[`teammate${i}.fullName`] && <span className="field-error">{errors[`teammate${i}.fullName`]}</span>}
                 </div>
                 <div className="apply-field">
-                  <span className="field-lbl">School Email *</span>
+                  <span className="field-lbl">Email *</span>
                   <input className="field-input" type="email" placeholder="name@uni.edu" value={tm.email} onChange={e => updateTeammate(i, 'email', e.target.value)} />
                   {errors[`teammate${i}.email`] && <span className="field-error">{errors[`teammate${i}.email`]}</span>}
                 </div>

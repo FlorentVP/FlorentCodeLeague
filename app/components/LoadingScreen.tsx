@@ -49,11 +49,11 @@ export default function LoadingScreen() {
         if (spinner) spinner.style.transform = 'translate(-50%, -50%) rotate(0deg)'
         setTimeout(() => setShowArena(true), 200)
         setTimeout(() => setArenaRun(true),  350)
-        setTimeout(() => setFadeOut(true),   5800)
+        setTimeout(() => setFadeOut(true),   2000)
         setTimeout(() => {
           setDone(true)
           window.dispatchEvent(new Event('loadingDone'))
-        }, 6600)
+        }, 2800)
       }
     }
 
