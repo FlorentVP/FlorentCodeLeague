@@ -479,7 +479,7 @@ body {
     width: auto;
     max-width: 140px;
     filter: brightness(0) invert(1);
-    opacity: 0.7;
+    opacity: 1;
     object-fit: contain;
 }
 .sponsor-item--text {
@@ -494,11 +494,11 @@ body {
 @media (max-width: 600px) {
     .sponsors-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 28px 16px;
+        gap: 32px 16px;
     }
-    .sponsor-item { height: 28px; }
-    .sponsor-item img { height: 24px; max-width: 110px; }
-    .sponsor-item--text { font-size: 16px; }
+    .sponsor-item { height: 36px; }
+    .sponsor-item img { height: 32px; max-width: 130px; }
+    .sponsor-item--text { font-size: 18px; }
 }
 
 /* ── LEADERBOARD ── */
