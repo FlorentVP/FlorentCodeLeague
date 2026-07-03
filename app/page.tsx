@@ -455,7 +455,7 @@ export default function Home() {
           <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Get noticed by Europe's best AI companies</p></div>
           <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Direct exposure to top VC firms</p></div>
           <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">Top 16 teams qualify for Stockholm finals</p></div>
-          <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">International student finalists, travel expenses covered</p></div>
+          <div className="perk"><span className="perk-dash">--</span><p className="perk-txt">International student finalists welcome</p></div>
         </div>
       </div>
 
