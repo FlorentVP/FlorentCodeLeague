@@ -414,7 +414,7 @@ export default function Home() {
             <img src="/logos/jane-street.png" alt="Jane Street" />
           </div>
           <div className="sponsor-item">
-            <img src="/logos/kth-ais.png" alt="KTH AIS" />
+            <img src="/logos/kth-ais.png" alt="KTH AIS" style={{height: '48px', maxWidth: '180px'}} />
           </div>
           <div className="sponsor-item sponsor-item--text">
             KTH Innovation
