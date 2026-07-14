@@ -232,7 +232,7 @@ function ApplyForm() {
         <div className="success-lbl">Application received</div>
         <div className="success-title">You&apos;re in the queue.</div>
         <div className="success-sub">
-          We review applications manually. If you&apos;re selected, you&apos;ll hear from us before July 2026.
+          We review applications manually. If you&apos;re selected, you&apos;ll hear from us before August 2026.
         </div>
         <div className="apply-divider" />
         <p style={{fontSize: '0.92em', color: 'rgba(255,255,255,0.6)', marginBottom: '28px', fontWeight: 300, lineHeight: 1.6}}>
