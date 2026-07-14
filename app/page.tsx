@@ -416,6 +416,9 @@ export default function Home() {
           <div className="sponsor-item">
             <img src="/logos/kth-ais.png" alt="KTH AIS" style={{height: '48px', maxWidth: '180px'}} />
           </div>
+          <div className="sponsor-item">
+            <img src="/logos/enhance-aic.png" alt="Enhance AIC" />
+          </div>
           <div className="sponsor-item sponsor-item--text">
             KTH Innovation
           </div>
