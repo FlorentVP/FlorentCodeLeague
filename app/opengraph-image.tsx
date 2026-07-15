@@ -12,29 +12,21 @@ export default function OGImage() {
         style={{
           width: '1200px',
           height: '630px',
-          background: '#000',
+          background: '#000000',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: '32px',
+          gap: '24px',
         }}
       >
-        <img
-          src="https://league.florent.vc/bot-king.png"
-          width={160}
-          height={160}
-          style={{ objectFit: 'contain' }}
-        />
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
-          <div style={{ fontSize: '80px', fontWeight: 700, color: '#fff', letterSpacing: '0.04em' }}>
-            FLORENT
-          </div>
-          <div style={{ fontSize: '28px', color: '#FF5500', letterSpacing: '0.12em' }}>
-            {'<CODE LEAGUE>'}
-          </div>
+        <div style={{ fontSize: '96px', fontWeight: 700, color: '#ffffff', letterSpacing: '0.04em', display: 'flex' }}>
+          FLORENT
         </div>
-        <div style={{ fontSize: '22px', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.06em' }}>
+        <div style={{ fontSize: '32px', color: '#FF5500', letterSpacing: '0.14em', display: 'flex' }}>
+          {'<CODE LEAGUE>'}
+        </div>
+        <div style={{ fontSize: '18px', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.18em', marginTop: '8px', display: 'flex' }}>
           NORDIC PROGRAMMING CHAMPIONSHIP
         </div>
       </div>
