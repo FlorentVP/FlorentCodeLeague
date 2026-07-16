@@ -10,13 +10,13 @@ export const metadata: Metadata = {
     title: "Florent Code League 2026",
     description: "Find out if you're in the top 1% of programmers in the Nordics.",
     url: "https://league.florent.vc",
-    images: [{ url: "https://league.florent.vc/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "https://league.florent.vc/og-image-v2.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Florent Code League 2026",
     description: "Find out if you're in the top 1% of programmers in the Nordics.",
-    images: ["https://league.florent.vc/og-image.png"],
+    images: ["https://league.florent.vc/og-image-v2.png"],
   },
 };
 
